@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="面试题汇总1：重载与重写有什么区别？12345678910111213override（重写）　　 1.方法名、参数、返回值类型相同。　　 2.子类方法不能缩小父类方法的访问权限。　　 3.子类方法不能抛出比父类方法更多的异常(但子类方法可以不抛出异常)。　　 4.存在于父类和子类之间。　　 5.方法被定义为final不能被重写。　overload（重载）　　1.参数类型、个数、顺序至少有一个不相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java开发面试（实习&#x2F;初级）">
+<meta property="og:url" content="http://yoursite.com/2020/03/24/Java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%EF%BC%88%E5%AE%9E%E4%B9%A0-%E5%88%9D%E7%BA%A7%EF%BC%89/index.html">
+<meta property="og:site_name" content="Handy Blog">
+<meta property="og:description" content="面试题汇总1：重载与重写有什么区别？12345678910111213override（重写）　　 1.方法名、参数、返回值类型相同。　　 2.子类方法不能缩小父类方法的访问权限。　　 3.子类方法不能抛出比父类方法更多的异常(但子类方法可以不抛出异常)。　　 4.存在于父类和子类之间。　　 5.方法被定义为final不能被重写。　overload（重载）　　1.参数类型、个数、顺序至少有一个不相">
+<meta property="article:published_time" content="2020-03-24T10:13:33.000Z">
+<meta property="article:modified_time" content="2020-03-24T10:14:13.324Z">
+<meta property="article:author" content="Handy Jiang">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/24/Java开发面试（实习-初级）/"/>
+
+
+
+
+
+  <title>Java开发面试（实习/初级） | Handy Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/ihandyyy" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Handy Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/Java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%EF%BC%88%E5%AE%9E%E4%B9%A0-%E5%88%9D%E7%BA%A7%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Handy Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Handy Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java开发面试（实习/初级）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T18:13:33+08:00">
+                2020-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+          <span class="post-meta-divider">|</span>
+          <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="面试题汇总"><a href="#面试题汇总" class="headerlink" title="面试题汇总"></a>面试题汇总</h1><h2 id="1：重载与重写有什么区别？"><a href="#1：重载与重写有什么区别？" class="headerlink" title="1：重载与重写有什么区别？"></a>1：重载与重写有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">override（重写）</span><br><span class="line"></span><br><span class="line">　　 1.方法名、参数、返回值类型相同。</span><br><span class="line">　　 2.子类方法不能缩小父类方法的访问权限。</span><br><span class="line">　　 3.子类方法不能抛出比父类方法更多的异常(但子类方法可以不抛出异常)。</span><br><span class="line">　　 4.存在于父类和子类之间。</span><br><span class="line">　　 5.方法被定义为final不能被重写。</span><br><span class="line"></span><br><span class="line">　overload（重载）</span><br><span class="line"></span><br><span class="line">　　1.参数类型、个数、顺序至少有一个不相同。 </span><br><span class="line">　　2.不能重载只有返回值不同的方法名。</span><br><span class="line">　　3.存在于父类和子类、同类中。</span><br></pre></td></tr></table></figure>
+
+<h2 id="2：-amp-和-amp-amp-有什么区别？"><a href="#2：-amp-和-amp-amp-有什么区别？" class="headerlink" title="2：&amp;和&amp;&amp;有什么区别？"></a>2：&amp;和&amp;&amp;有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;按位与----a&amp;b是把a和b都转换成二进制数然后再进行与的运算</span><br><span class="line">            不管前面的条件是否正确，后面都执行</span><br><span class="line">&amp;&amp;逻辑与---a&amp;&amp;b就是当且仅当两个操作数均为 true时，其结果才为 true；（短路功能）</span><br><span class="line">        前面条件正确时，才执行后面，不正确时，就不执行，效率高</span><br></pre></td></tr></table></figure>
+
+<h2 id="3：HashTable和HashMap有什么区别？"><a href="#3：HashTable和HashMap有什么区别？" class="headerlink" title="3：HashTable和HashMap有什么区别？"></a>3：HashTable和HashMap有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- HashMap是Hashtable的轻量级实现（非线程安全的实现），他们都完成了Map接口</span><br><span class="line">- 主要区别在于HashMap允许空（null）键值（key）,由于非线程安全，效率上可能高Hashtable</span><br><span class="line">- HashMap允许将null作为一个entry的key或者value，而Hashtable不允许</span><br><span class="line">- 最大的不同是，Hashtable的方法是Synchronize的，而HashMap不是</span><br></pre></td></tr></table></figure>
+
+<h2 id="4：用最有效率的方法算出2乘以8等于多少？"><a href="#4：用最有效率的方法算出2乘以8等于多少？" class="headerlink" title="4：用最有效率的方法算出2乘以8等于多少？"></a>4：用最有效率的方法算出2乘以8等于多少？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 &lt;&lt; 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="5：final-finally-finalize的区别？"><a href="#5：final-finally-finalize的区别？" class="headerlink" title="5：final, finally, finalize的区别？"></a>5：final, finally, finalize的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">final—修饰符（关键字）</span><br><span class="line">    如果一个类被声明为final，意味着它不能再派生出新的子类，不能作为父类被继承。</span><br><span class="line">    一个类不能既被声明为 abstract的，又被声明为final的</span><br><span class="line">    被声明为final的方法也同样只能使用，不能重载</span><br><span class="line"></span><br><span class="line">finally—异常处理时提供 finally 块来执行操作</span><br><span class="line">    finally块则是无论异常是否发生，都会执行finally块的内容</span><br><span class="line"></span><br><span class="line">finalize—方法名</span><br><span class="line">    finalize() 方法是在垃圾收集器删除对象之前对这个对象调用的</span><br><span class="line">    它是在object类中定义的，所有的类都继承了它</span><br></pre></td></tr></table></figure>
+
+<h2 id="6：字节流和字符流有什么区别？"><a href="#6：字节流和字符流有什么区别？" class="headerlink" title="6：字节流和字符流有什么区别？"></a>6：字节流和字符流有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">字节流：按字节读写</span><br><span class="line">字符流：按字符</span><br><span class="line"></span><br><span class="line">通常在处理文本时优先使用字符流，其他的用字节流</span><br><span class="line">字节流在操作时本身不会用到缓冲区（内存），是文件本身直接操作的，而字符流在操作时使用了缓冲区，通过缓冲区再操作文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="7：Arraylist和Linkedlist的区别"><a href="#7：Arraylist和Linkedlist的区别" class="headerlink" title="7：Arraylist和Linkedlist的区别?"></a>7：Arraylist和Linkedlist的区别?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ArrayList、LinkedList、Vector和Stack是List的四个实现类，其中Vector是基于JDK1.0，虽然实现了同步，但是效率低，已经不用了，Stack继承Vector</span><br><span class="line"></span><br><span class="line">区别：</span><br><span class="line"></span><br><span class="line">    - ArrayList是实现了基于动态数组的数据结构，而LinkedList是基于链表的数据结构</span><br><span class="line">    - 对于随机访问get和set，ArrayList要优于LinkedList，LinkedList不支持高效的随机访问</span><br><span class="line">    - ArrayList适合查找，LinkedList适合增删</span><br></pre></td></tr></table></figure>
+
+<h2 id="8：接口和抽象类有什么区别？"><a href="#8：接口和抽象类有什么区别？" class="headerlink" title="8：接口和抽象类有什么区别？"></a>8：接口和抽象类有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">抽象类（abstract class）：</span><br><span class="line">    1：abstract 关键字修饰，并且没有方法体</span><br><span class="line">    2：抽象类不能直接创建实例</span><br><span class="line">    3：抽象类只能被继承，一个具体类继承一个抽象类，必须实现所有抽象方法</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">接口（interface）：</span><br><span class="line">    1：实现接口的一定要实现接口里定义的所有方法</span><br><span class="line">    2：接口可以实现多重继承</span><br><span class="line"></span><br><span class="line">区别：</span><br><span class="line">    1：抽象类和接口都不能够实例化，但可以定义抽象类和接口类型的引用</span><br><span class="line">    2：一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，否则该类仍然需要被声明为抽象类</span><br><span class="line">    3：接口比抽象类更加抽象，因为抽象类中可以定义构造器，可以有抽象方法和具体方法，而接口中不能定义构造器而且其中的方法全部都是抽象方法</span><br><span class="line">    4：抽象类中的成员可以是private、默认、protected、public的，而接口中的成员全都是public的</span><br><span class="line">    5：抽象类中可以定义成员变量，而接口中定义的成员变量实际上都是常量。有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法</span><br></pre></td></tr></table></figure>
+
+<h2 id="9：String，-StringBuffer，-StringBuilder-的区别？"><a href="#9：String，-StringBuffer，-StringBuilder-的区别？" class="headerlink" title="9：String， StringBuffer， StringBuilder 的区别？"></a>9：String， StringBuffer， StringBuilder 的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 运行速度快慢为：StringBuilder &gt; StringBuffer &gt; String</span><br><span class="line">    - （String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的）</span><br><span class="line">- StringBuilder是线程不安全的，而String、StringBuffer是线程安全的</span><br></pre></td></tr></table></figure>
+
+<h2 id="10：转发（forward）和重定向（redirect）的区别？"><a href="#10：转发（forward）和重定向（redirect）的区别？" class="headerlink" title="10：转发（forward）和重定向（redirect）的区别？"></a>10：转发（forward）和重定向（redirect）的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1：效率上</span><br><span class="line">    转发（forward） &gt; 重定向（redirect）</span><br><span class="line">2：显示上</span><br><span class="line">    重定向（redirect）：显示新的URL</span><br><span class="line">    转发（forward）：地址栏不变</span><br><span class="line">3：数据上</span><br><span class="line">    转发（forward）：可以共享request里面的数据</span><br><span class="line">    重定向（redirect）：不能</span><br><span class="line">4：请求次数</span><br><span class="line">    重定向（redirect）是两次</span><br><span class="line">    转发（forward）是一次</span><br></pre></td></tr></table></figure>
+
+<h2 id="11：写出JDBC操作数据库的步骤？"><a href="#11：写出JDBC操作数据库的步骤？" class="headerlink" title="11：写出JDBC操作数据库的步骤？"></a>11：写出JDBC操作数据库的步骤？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1：加载驱动</span><br><span class="line">    Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;);</span><br><span class="line">2：创建连接</span><br><span class="line">    Connection con &#x3D; DriverManager.getConnection(&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;, &quot;1111&quot;, &quot;1111&quot;);</span><br><span class="line">3：创建语句</span><br><span class="line">    PreparedStatement ps &#x3D; con.prepareStatement(&quot;select * from user&quot;);</span><br><span class="line">4：执行语句</span><br><span class="line">    ResultSet rs &#x3D; ps.executeQuery();</span><br><span class="line">5：处理结果</span><br><span class="line">    while(rs.next()) &#123;</span><br><span class="line">        rs.get.....（“”）；</span><br><span class="line">    &#125;</span><br><span class="line">6：关闭资源</span><br><span class="line">    finally &#123;</span><br><span class="line">        if(con !&#x3D; null) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                con.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="12：TCP和UDP的区别？哪个是三次握手协议？"><a href="#12：TCP和UDP的区别？哪个是三次握手协议？" class="headerlink" title="12：TCP和UDP的区别？哪个是三次握手协议？"></a>12：TCP和UDP的区别？哪个是三次握手协议？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TCP稳定性较高，但效率低</span><br><span class="line">UDP通讯相反，效率较高，但稳定性较差</span><br></pre></td></tr></table></figure>
+
+<h2 id="13：创建多线程的方式有几种？分别是什么？线程死锁是如何产生的？如何防止线程死锁现象？"><a href="#13：创建多线程的方式有几种？分别是什么？线程死锁是如何产生的？如何防止线程死锁现象？" class="headerlink" title="13：创建多线程的方式有几种？分别是什么？线程死锁是如何产生的？如何防止线程死锁现象？"></a>13：创建多线程的方式有几种？分别是什么？线程死锁是如何产生的？如何防止线程死锁现象？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方式：</span><br><span class="line">    继承Thread、实现 Runnable 接口</span><br><span class="line"></span><br><span class="line">产生:</span><br><span class="line"></span><br><span class="line">    - 一个资源每次只能被一个进程使用</span><br><span class="line">    - 一个进程因请求发生阻塞时，依然对已获得的资源保持不放</span><br><span class="line">    - 进程已经获得资源使用权，但是一直未使用</span><br><span class="line">    - 同一个进程，频繁的获取资源的优先使用权，一直未释放</span><br><span class="line"></span><br><span class="line">防止：</span><br><span class="line">    加锁顺序（线程按照一定的顺序加锁）</span><br><span class="line">    加锁时限（线程尝试获取锁的时候加上一定的时限，超过时限则放弃对该锁的请求，并释放自己占有的锁）</span><br><span class="line">    死锁检测（一般是将所有的锁存放于map对象中，检测map中的锁）</span><br></pre></td></tr></table></figure>
+
+<h2 id="14：Session和Cookie有什么区别？"><a href="#14：Session和Cookie有什么区别？" class="headerlink" title="14：Session和Cookie有什么区别？"></a>14：Session和Cookie有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cookie存在客户端、session数据放在服务器上</span><br><span class="line">cookie不是很安全，别人可以分析存放在本地的COOKIE并进行修改</span><br><span class="line">session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能 </span><br><span class="line">单个cookie在客户端的限制是3K，就是说一个站点在客户端存放的COOKIE不能大于3K</span><br></pre></td></tr></table></figure>
+
+<h2 id="15：GET和POST请求的区别？"><a href="#15：GET和POST请求的区别？" class="headerlink" title="15：GET和POST请求的区别？"></a>15：GET和POST请求的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET：</span><br><span class="line">    1：从服务器上获取数据，一般不能使用在查询、读操作接口</span><br><span class="line">    2：由URL所限制，GET方式传输的数据大小有所限制，传送的数据量不超过2KB</span><br><span class="line">    3：请求的数据会附加在URL之后，以？分隔URL和传输数据，多个参数用&amp;连接</span><br><span class="line">    4：安全性差</span><br><span class="line"></span><br><span class="line">POST:</span><br><span class="line">    1：向服务器提交数据,一般处理写业务</span><br><span class="line">    2：POST方式传送的数据量比较大，一般被默认为没有限制</span><br><span class="line">    3：安全性高</span><br><span class="line">    4：请求的数据内容放置在HTML HEADER中</span><br></pre></td></tr></table></figure>
+
+<h2 id="16：JSP的常用指令有哪些？"><a href="#16：JSP的常用指令有哪些？" class="headerlink" title="16：JSP的常用指令有哪些？"></a>16：JSP的常用指令有哪些？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">三个编译指令为：page、include、taglib</span><br><span class="line"></span><br><span class="line">七个动作指令为：jsp:forward、jsp:param、jsp:include、jsp:plugin、jsp:useBean、jsp:setProperty、jsp:getProperty</span><br></pre></td></tr></table></figure>
+
+<h2 id="17：DI有几种方式、分别是什么，你常用的是哪种方式？"><a href="#17：DI有几种方式、分别是什么，你常用的是哪种方式？" class="headerlink" title="17：DI有几种方式、分别是什么，你常用的是哪种方式？"></a>17：DI有几种方式、分别是什么，你常用的是哪种方式？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1：Setter方法</span><br><span class="line">2：构造器</span><br><span class="line">3：接口注入</span><br><span class="line"></span><br><span class="line">注解实现注入、getter，setter方式注入(常用)</span><br></pre></td></tr></table></figure>
+
+<h2 id="18：Mybatis中-和-在xml中取值有什么不同？"><a href="#18：Mybatis中-和-在xml中取值有什么不同？" class="headerlink" title="18：Mybatis中$和#在xml中取值有什么不同？"></a>18：Mybatis中$和#在xml中取值有什么不同？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mybatis 为我们提供了两种支持动态 sql 的语法：#&#123;&#125; 以及 $&#123;&#125;</span><br><span class="line"></span><br><span class="line">#方式能够很大程度防止sql注入，$方式无法防止Sql注入</span><br><span class="line">$方式一般用于传入数据库对象，例如传入表名</span><br><span class="line">＃&#123;&#125;将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号</span><br><span class="line">一般能用#的就别用$</span><br></pre></td></tr></table></figure>
+
+<h2 id="19：列举Struts2常见的组件有哪些？常见的配置标签有哪些？返回值类型有哪些？"><a href="#19：列举Struts2常见的组件有哪些？常见的配置标签有哪些？返回值类型有哪些？" class="headerlink" title="19：列举Struts2常见的组件有哪些？常见的配置标签有哪些？返回值类型有哪些？"></a>19：列举Struts2常见的组件有哪些？常见的配置标签有哪些？返回值类型有哪些？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">组件：</span><br><span class="line">    strutsParperAndExecuteFilter</span><br><span class="line">    Action</span><br><span class="line">    Result</span><br><span class="line">    Interceptor</span><br><span class="line">标签：</span><br><span class="line">    package</span><br><span class="line">    action</span><br><span class="line">    result</span><br><span class="line">    param</span><br><span class="line">    interceptor</span><br><span class="line">返回值类型：</span><br><span class="line">    dispatcher</span><br><span class="line">    redirect</span><br><span class="line">    redirectAction</span><br><span class="line">    stream</span><br><span class="line">    json</span><br></pre></td></tr></table></figure>
+
+<h2 id="20：Spring常见的注解有哪些？"><a href="#20：Spring常见的注解有哪些？" class="headerlink" title="20：Spring常见的注解有哪些？"></a>20：Spring常见的注解有哪些？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Autowired--自动装配</span><br><span class="line">@Component--自动支持自动装配</span><br><span class="line">@Repository--DAO层实现</span><br><span class="line">@Service--Service层实现</span><br><span class="line">@Controller--Web层实现</span><br></pre></td></tr></table></figure>
+
+<h2 id="21：一个汉字几个字节，一个char类型的变量，可以储存一个汉字吗，为什么？"><a href="#21：一个汉字几个字节，一个char类型的变量，可以储存一个汉字吗，为什么？" class="headerlink" title="21：一个汉字几个字节，一个char类型的变量，可以储存一个汉字吗，为什么？"></a>21：一个汉字几个字节，一个char类型的变量，可以储存一个汉字吗，为什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个字节，可以存储，前提是汉字必须是Unicode编码</span><br></pre></td></tr></table></figure>
+
+<h2 id="22：多线程中run和start方法有什么区别？"><a href="#22：多线程中run和start方法有什么区别？" class="headerlink" title="22：多线程中run和start方法有什么区别？"></a>22：多线程中run和start方法有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Thread的start才是正在开启线程</span><br><span class="line">Run只是调用了一个普通方法，并没有启动另一个线程，程序还是会按照顺序执行相应的代码</span><br><span class="line">Start则表示，重新开启一个线程，不必等待其他线程运行完，只要得到cup就可以运行该线程</span><br></pre></td></tr></table></figure>
+
+<h2 id="23：静态变量和实例变量有什么区别？"><a href="#23：静态变量和实例变量有什么区别？" class="headerlink" title="23：静态变量和实例变量有什么区别？"></a>23：静态变量和实例变量有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">静态变量前面要加static，实例变量不用</span><br><span class="line">实例变量属于对象的属性，必须创建了实例对象，才可以被使用，静态变量不属于某个实例对象，而是属于类，也叫类变量，不用创建任何实例对象就会被使用</span><br></pre></td></tr></table></figure>
+
+<h2 id="24：List和Map有什么区别？"><a href="#24：List和Map有什么区别？" class="headerlink" title="24：List和Map有什么区别？"></a>24：List和Map有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">list：</span><br><span class="line">    - 链表</span><br><span class="line">    - 有序</span><br><span class="line">    - 继承Collection(set也是)</span><br><span class="line">    - 可以有重复的对象值，但是对象下标不能重复</span><br><span class="line">Map：</span><br><span class="line">    - key-value</span><br><span class="line">    - 无序</span><br><span class="line">    - 键不能有重复的 值可以重复</span><br></pre></td></tr></table></figure>
+
+<h2 id="25：-与equals有什么区别？"><a href="#25：-与equals有什么区别？" class="headerlink" title="25：==与equals有什么区别？"></a>25：==与equals有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;：比较两个数据内存地址是否相同</span><br><span class="line">equals：比较两个数据值是否一样</span><br></pre></td></tr></table></figure>
+
+<h2 id="26：如何给一张表增加一个字段，写出sql语句？"><a href="#26：如何给一张表增加一个字段，写出sql语句？" class="headerlink" title="26：如何给一张表增加一个字段，写出sql语句？"></a>26：如何给一张表增加一个字段，写出sql语句？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 字段 类型 NOT NULL Default 0;</span><br></pre></td></tr></table></figure>
+
+<h2 id="27：-i与i-的区别？"><a href="#27：-i与i-的区别？" class="headerlink" title="27：++i与i++的区别？"></a>27：++i与i++的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">++i：先赋值+1，后使用i进行其它运算</span><br><span class="line">i++：先使用i进行其它运算，后赋值+1</span><br></pre></td></tr></table></figure>
+
+<h2 id="28：谈谈Spring-AOP的原理？"><a href="#28：谈谈Spring-AOP的原理？" class="headerlink" title="28：谈谈Spring AOP的原理？"></a>28：谈谈Spring AOP的原理？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">OOP（Object Oriented Programming，面向对象编程</span><br><span class="line">    - 相当于OOP（Object Oriented Programming，面向对象编程）的补充和完善</span><br><span class="line">    - OOP允许开发者定义纵向的关系，但并不适合定义横向的关系，例如日志功能</span><br><span class="line">    - 导致了大量代码的重复，而不利于各个模块的重用</span><br><span class="line"></span><br><span class="line">AOP称为面向切面编程</span><br><span class="line">    - 核心关注点和横切关注点(对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点)</span><br><span class="line">    - 切面（aspect）(切面就是对横切关注点的抽象)</span><br><span class="line">    - 连接点（joinpoint）（Spring只支持方法类型的连接点，所以在Spring中连接点指的就是被拦截到的方法）</span><br><span class="line">    - 通知（advice）（拦截到连接点之后要执行的代码，通知分为前置、后置、异常、最终、环绕通知五类）</span><br><span class="line">    - 用于处理系统中分布于各个模块的横切关注点，比如事务管理、权限认证、日志、缓存等等</span><br><span class="line">    - 实现AOP功能关键是采用代理技术，主要分为静态代理(AspectJ)和动态代理</span><br><span class="line">    - JDK中采用Proxy类产生动态代理的方式为某个接口生成实现类，如果要为某个类生成子类，则可以用CGLIB(代理的类不是代理接口的时候)</span><br><span class="line">    - 减少系统的重复代码，降低模块之间的耦合度，并有利于未来的可操作性和可维护性</span><br></pre></td></tr></table></figure>
+
+<h2 id="29：什么是IOC？"><a href="#29：什么是IOC？" class="headerlink" title="29：什么是IOC？"></a>29：什么是IOC？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (Inversion of Control,简称IOC)，即控制反转，是一种设计模式，是spring的核心</span><br><span class="line">- 所谓控制反转，就是把原先我们代码里面需要实现的对象创建、依赖的代码，反转给容器来帮忙实现,所以需要创建一个容器，同时也需要一种描述，告知容器，这些对象之间的依赖关系</span><br><span class="line">- DI(依赖注入)是实现IoC的一种方法</span><br><span class="line">- 可以解决代码耦合，由IOC容器来管理对象的生命周期、依赖关系等。</span><br><span class="line">- 完成对象的创建和依赖的管理注入</span><br><span class="line">- 当前比较知名的IOC容器有：Spring、JBoss、EJB等。</span><br></pre></td></tr></table></figure>
+
+<h2 id="30：什么是ORM？"><a href="#30：什么是ORM？" class="headerlink" title="30：什么是ORM？"></a>30：什么是ORM？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">对象关系映射（Object Relational Mapping，简称ORM）</span><br><span class="line"></span><br><span class="line">为了解决面向对象与关系数据库存在的互不匹配的现象的技术</span><br><span class="line">ORM是通过使用描述对象和数据库之间映射的元数据(元数据一般采用XML格式)，将程序中的对象自动持久化到关系数据库中</span><br><span class="line"></span><br><span class="line">Java典型的ORM中间件有:Hibernate,ibatis,speedframework,mybatis</span><br></pre></td></tr></table></figure>
+
+<h2 id="31：Integer与int的区别？"><a href="#31：Integer与int的区别？" class="headerlink" title="31：Integer与int的区别？"></a>31：Integer与int的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int 是基本数据类型，初值为0</span><br><span class="line">Integer是int的包装类，初值为null</span><br><span class="line"></span><br><span class="line">Integer缓存：注意拆箱和装箱（-128-127之间）</span><br><span class="line"></span><br><span class="line">原始类型：boolean，char，byte，short，int，long，float，double</span><br><span class="line">包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double</span><br></pre></td></tr></table></figure>
+
+<h2 id="32：Hibernate与Mybatis区别？"><a href="#32：Hibernate与Mybatis区别？" class="headerlink" title="32：Hibernate与Mybatis区别？"></a>32：Hibernate与Mybatis区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1：hibernate的扩展性和移植性比mybatis强</span><br><span class="line">2：hibernate不需要写sql语句，会自动生成，而mybatis则需要写sql语句</span><br><span class="line">3：hibernate支持事务、一级缓存、二级缓存、查询缓存等</span><br><span class="line">4：hibernate自己提供分页功能，mybatis需要配置分页插件</span><br></pre></td></tr></table></figure>
+
+<h2 id="33：简要说明SSH框架搭建步骤？"><a href="#33：简要说明SSH框架搭建步骤？" class="headerlink" title="33：简要说明SSH框架搭建步骤？"></a>33：简要说明SSH框架搭建步骤？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1：Struts2</span><br><span class="line">    - 导包</span><br><span class="line">    - 加载struts.xml</span><br><span class="line">    - 配置web.xml</span><br><span class="line">        - filter</span><br><span class="line">2：Struts2+Spring</span><br><span class="line">    - 导中间包、Spring包</span><br><span class="line">    - 增加Spring的配置文件Applicationcontext.xml</span><br><span class="line">    - 配置web.xml</span><br><span class="line">        - context和监听</span><br><span class="line">3：Hibernate</span><br><span class="line">    - 导包</span><br><span class="line">    - 增加hibernate的配置文件hibernate.hbm.cfg和表的映射文件</span><br><span class="line">        - 配置数据库的方言和连接、加载映射文件</span><br><span class="line">4：Hibernate+Spring</span><br><span class="line">    - 导中间包</span><br><span class="line">    - 在spring的配置文件中加载hibernate的配置信息</span><br></pre></td></tr></table></figure>
+
+<h2 id="34：简要说明SSM框架搭建步骤？"><a href="#34：简要说明SSM框架搭建步骤？" class="headerlink" title="34：简要说明SSM框架搭建步骤？"></a>34：简要说明SSM框架搭建步骤？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1：Spring</span><br><span class="line">    - 导包</span><br><span class="line">    - 增加Spring的配置文件Applicationcontext.xml</span><br><span class="line">    - 配置web.xml</span><br><span class="line">2：springMVC</span><br><span class="line">    - 导包</span><br><span class="line">    - 增加springMVC的配置文件context-dispatcher.xml</span><br><span class="line">    - 配置web.xml</span><br><span class="line">3：mybatis</span><br><span class="line">    - 导包</span><br><span class="line">    - 增加mybatis的配置文件mybatis-config.xml</span><br><span class="line">    - 将mybatis的配置文件在spring和springMVC中进行引用和配置</span><br></pre></td></tr></table></figure>
+
+<h2 id="35：谈谈你对MVC的理解？"><a href="#35：谈谈你对MVC的理解？" class="headerlink" title="35：谈谈你对MVC的理解？"></a>35：谈谈你对MVC的理解？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MVC：是一个框架设计模式，其中M（模型）、V（视图）、C（控制器）</span><br><span class="line"></span><br><span class="line">视图：视图向用户显示相关的数据，并接受用户的输入。视图不进行任何业务逻辑处理。如：jsp、html等</span><br><span class="line"></span><br><span class="line">模型：表示业务数据和业务处理。属于数据模型，如:entity、jdbc、hibernate、mybatis等</span><br><span class="line"></span><br><span class="line">控制器：接收、响应用户请求，servlet、action、controller等</span><br></pre></td></tr></table></figure>
+
+<h2 id="36：Redis支持哪些数据类型的存储？"><a href="#36：Redis支持哪些数据类型的存储？" class="headerlink" title="36：Redis支持哪些数据类型的存储？"></a>36：Redis支持哪些数据类型的存储？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string、list、set、zset、hash</span><br></pre></td></tr></table></figure>
+
+<h2 id="37：Java如何调用Redis进行数据操作，并列举增删改查操作？"><a href="#37：Java如何调用Redis进行数据操作，并列举增删改查操作？" class="headerlink" title="37：Java如何调用Redis进行数据操作，并列举增删改查操作？"></a>37：Java如何调用Redis进行数据操作，并列举增删改查操作？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 导包</span><br><span class="line">- Jedis jd &#x3D; new Jedis(IP);</span><br><span class="line">- jd.ping();&#x2F;&#x2F;PONG</span><br></pre></td></tr></table></figure>
+
+<h2 id="38：Java如何链接MongoDB，写出逻辑代码？"><a href="#38：Java如何链接MongoDB，写出逻辑代码？" class="headerlink" title="38：Java如何链接MongoDB，写出逻辑代码？"></a>38：Java如何链接MongoDB，写出逻辑代码？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">导包</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;建立连接</span><br><span class="line">MongoClient mc &#x3D;  new MongoClient(&quot;192.168.168.220&quot;, 27017);</span><br><span class="line">MongoDatabase db &#x3D; mc.getDatabase(&quot;db1&quot;);&#x2F;&#x2F;数据库名称</span><br></pre></td></tr></table></figure>
+
+<h2 id="39：MongoDB的体系逻辑结构，主要有什么组成？"><a href="#39：MongoDB的体系逻辑结构，主要有什么组成？" class="headerlink" title="39：MongoDB的体系逻辑结构，主要有什么组成？"></a>39：MongoDB的体系逻辑结构，主要有什么组成？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文档(document)、集合(collection)、数据库(database)</span><br></pre></td></tr></table></figure>
+
+<h2 id="40：Redis和MongoDB分别应用于哪些应用场景？"><a href="#40：Redis和MongoDB分别应用于哪些应用场景？" class="headerlink" title="40：Redis和MongoDB分别应用于哪些应用场景？"></a>40：Redis和MongoDB分别应用于哪些应用场景？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">key-value---Redis</span><br><span class="line">文档存储-----MongoDB</span><br></pre></td></tr></table></figure>
+
+<h2 id="41：列举至少10个linux系统操作命令，并给出汉字解释？"><a href="#41：列举至少10个linux系统操作命令，并给出汉字解释？" class="headerlink" title="41：列举至少10个linux系统操作命令，并给出汉字解释？"></a>41：列举至少10个linux系统操作命令，并给出汉字解释？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">参考笔记</span><br></pre></td></tr></table></figure>
+
+<h2 id="42：分别写出oracle、mysql的分页关键词？"><a href="#42：分别写出oracle、mysql的分页关键词？" class="headerlink" title="42：分别写出oracle、mysql的分页关键词？"></a>42：分别写出oracle、mysql的分页关键词？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oracle：rownum关键词、row_number()函数</span><br><span class="line">mysql：limit 0,5    &#x2F;    limit 5;</span><br></pre></td></tr></table></figure>
+
+<h2 id="43：如果equals方法比较为true，那么它们的Hashcode值一定相同吗？-如果hashcode相同，那么equals方法比较一定为true吗？"><a href="#43：如果equals方法比较为true，那么它们的Hashcode值一定相同吗？-如果hashcode相同，那么equals方法比较一定为true吗？" class="headerlink" title="43：如果equals方法比较为true，那么它们的Hashcode值一定相同吗？ 如果hashcode相同，那么equals方法比较一定为true吗？"></a>43：如果equals方法比较为true，那么它们的Hashcode值一定相同吗？ 如果hashcode相同，那么equals方法比较一定为true吗？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">不一定相同</span><br><span class="line">一定</span><br><span class="line"></span><br><span class="line">重写equals方法时请必须重写hashcode，以保证equals方法相等时两个对象hashcode返回相同的值</span><br><span class="line"></span><br><span class="line">总的来说，Java中的集合（Collection）有两类，一类是List，再有一类是Set。 前者集合内的元素是有序的，元素可以重复；后者元素无序，但元素不可重复。</span><br><span class="line">那么这里就有一个比较严重的问题了：要想保证元素不重复，可两个元素是否重复应该依据什么来判断呢？ 这就是Object.equals方法了。但是，如果每增加一个元素就检查一次，那么当元素很多时，后添加到集合中的元素比较的次数就非常多了。 也就是说，如果集合中现在已经有1000个元素，那么第1001个元素加入集合时，它就要调用1000次equals方法。这显然会大大降低效率。  </span><br><span class="line">于是，Java采用了哈希表的原理。哈希（Hash）实际上是个人名，由于他提出一哈希算法的概念，所以就以他的名字命名了。 哈希算法也称为散列算法，是将数据依特定算法直接指定到一个地址上</span><br></pre></td></tr></table></figure>
+
+<h2 id="44：简述servlet-生命周期？"><a href="#44：简述servlet-生命周期？" class="headerlink" title="44：简述servlet 生命周期？"></a>44：简述servlet 生命周期？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">通过调用 init () 方法进行初始化</span><br><span class="line">调用 service() 方法来处理客户端的请求</span><br><span class="line">通过调用 destroy() 方法终止（结束）</span><br><span class="line">Servlet 是由 JVM 的垃圾回收器进行垃圾回收的</span><br></pre></td></tr></table></figure>
+
+<h2 id="45：JDK和JRE的关系区别是什么？"><a href="#45：JDK和JRE的关系区别是什么？" class="headerlink" title="45：JDK和JRE的关系区别是什么？"></a>45：JDK和JRE的关系区别是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JDK是Java的开发工具，JDK包含JRE</span><br><span class="line">JRE只是Java程序的运行环境，它最核心的内容就是JVM（Java虚拟机）及核心类库</span><br></pre></td></tr></table></figure>
+
+<h2 id="46：SpringMVC运行原理是什么？"><a href="#46：SpringMVC运行原理是什么？" class="headerlink" title="46：SpringMVC运行原理是什么？"></a>46：SpringMVC运行原理是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.客户端请求提交到DispatcherServlet </span><br><span class="line">2.由DispatcherServlet控制器查询一个或多个HandlerMapping，找到处理请求的Controller </span><br><span class="line">3.DispatcherServlet将请求提交到Controller </span><br><span class="line">4.Controller调用业务逻辑处理后，返回ModelAndView </span><br><span class="line">5.DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图 </span><br><span class="line">6.视图负责将结果显示到客户端 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">DispatcherServlet是整个Spring MVC的核心。它负责接收HTTP请求组织协调Spring MVC的各个组成部分</span><br></pre></td></tr></table></figure>
+
+<h2 id="47：进程和线程的区别是什么？"><a href="#47：进程和线程的区别是什么？" class="headerlink" title="47：进程和线程的区别是什么？"></a>47：进程和线程的区别是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 进程是资源的分配和调度的一个独立单元，而线程是CPU调度的基本单元</span><br><span class="line">- 同一个进程中可以包括多个线程</span><br><span class="line">- 进程结束后它拥有的所有线程都将销毁，而线程的结束不会影响同个进程中的其他线程的结束</span><br><span class="line">- 线程共享整个进程的资源（寄存器、堆栈、上下文），一个进行至少包括一个线程</span><br><span class="line">- 进程的创建调用fork或者vfork，而线程的创建调用pthread_create</span><br><span class="line">- 线程中执行时一般都要进行同步和互斥，因为他们共享同一进程的所有资源</span><br></pre></td></tr></table></figure>
+
+<h2 id="48：进程的几种状态分别是什么？"><a href="#48：进程的几种状态分别是什么？" class="headerlink" title="48：进程的几种状态分别是什么？"></a>48：进程的几种状态分别是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">就绪状态：</span><br><span class="line"></span><br><span class="line">    当进程已分配到除CPU以外的所有必要的资源，只要获得处理机便可立即执行，这时的进程状态称为就绪状态</span><br><span class="line"></span><br><span class="line">运行状态：</span><br><span class="line"></span><br><span class="line">    当进程已获得处理机，其程序正在处理机上执行，此时的进程状态称为运行状态</span><br><span class="line"></span><br><span class="line">阻塞状态：</span><br><span class="line"></span><br><span class="line">    正在运行的进程，由于等待某个事件发生而无法执行时，便放弃处理机而处于阻塞状态。引起进程阻塞的事件可有多种，例如，等待I&#x2F;O完成、申请缓冲区不能满足、等待信件(信号)等</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">状态转换：</span><br><span class="line"></span><br><span class="line">    就绪→运行：处于就绪状态的进程，当进程调度程序为之分配了处理机后，该进程便由就绪状态转变成运行状态</span><br><span class="line"></span><br><span class="line">    运行→就绪：处于运行状态的进程在其运行过程中，因分配给它的一个时间片已用完而不得不让出处理机，于是进程从运行状态转变成就绪状态</span><br><span class="line"></span><br><span class="line">    运行→阻塞：正在运行的进程因等待某种事件发生而无法继续运行时，便从运行状态变成阻塞状态</span><br><span class="line"></span><br><span class="line">    阻塞→就绪：处于阻塞状态的进程，若其等待的事件已经发生，于是进程由阻塞状态转变为就绪状态</span><br></pre></td></tr></table></figure>
+
+<h2 id="49：请说出你所知道的线程同步的方法？"><a href="#49：请说出你所知道的线程同步的方法？" class="headerlink" title="49：请说出你所知道的线程同步的方法？"></a>49：请说出你所知道的线程同步的方法？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wait():使一个线程处于等待状态，并且释放所持有的对象的lock。</span><br><span class="line">sleep():使一个正在运行的线程处于睡眠状态，是一个静态方法，调用此方法要捕捉InterruptedException异常。 </span><br><span class="line">notify():唤醒一个处于等待状态的线程，注意的是在调用此方法的时候，并不能确切的唤醒某一个等待状态的线程，而是由JVM确定唤醒哪个线程，而且不是按优先级。</span><br><span class="line">notityAll():唤醒所有处入等待状态的线程，注意并不是给所有唤醒线程一个对象的锁，而是让它们竞争。</span><br></pre></td></tr></table></figure>
+
+<h2 id="50：用户在浏览器中输入URL之后，发生了什么？写出请求和响应的流程"><a href="#50：用户在浏览器中输入URL之后，发生了什么？写出请求和响应的流程" class="headerlink" title="50：用户在浏览器中输入URL之后，发生了什么？写出请求和响应的流程"></a>50：用户在浏览器中输入URL之后，发生了什么？写出请求和响应的流程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1：域名解析</span><br><span class="line">2：TCP三次握手</span><br><span class="line">3：浏览器向服务器发送http请求</span><br><span class="line">4：浏览器发送请求头信息</span><br><span class="line">5：服务器处理请求</span><br><span class="line">6：服务器做出应答</span><br><span class="line">7：服务器发送应答头信息</span><br><span class="line">8：服务器发送数据</span><br><span class="line">9：TCP连接关闭</span><br></pre></td></tr></table></figure>
+
+<h2 id="51：响应结果状态码有哪些，并给出中文含义？"><a href="#51：响应结果状态码有哪些，并给出中文含义？" class="headerlink" title="51：响应结果状态码有哪些，并给出中文含义？"></a>51：响应结果状态码有哪些，并给出中文含义？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1**：信息性状态码</span><br><span class="line">2**：成功状态码</span><br><span class="line">    200：请求正常成功</span><br><span class="line">    204：指示请求成功但没有返回新信息</span><br><span class="line">    206：指示服务器已完成对资源的部分 GET 请求</span><br><span class="line">3**：重定向状态码</span><br><span class="line">    301：永久性重定向</span><br><span class="line">    302：临时性重定向</span><br><span class="line">    304：服务器端允许请求访问资源，但未满足条件</span><br><span class="line">4**：客户端错误状态码</span><br><span class="line">    400：请求报文中存在语法错误</span><br><span class="line">    401：发送的请求需要有通过HTTP认证的认证信息</span><br><span class="line">    403：对请求资源的访问被服务器拒绝了</span><br><span class="line">    404：服务器上无法找到请求的资源</span><br><span class="line">5**：服务器错误状态码</span><br><span class="line">    500：服务器端在执行请求时发生了错误</span><br><span class="line">    503：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求</span><br></pre></td></tr></table></figure>
+
+<h2 id="52：简述JAVA中I-O和NIO的区别？"><a href="#52：简述JAVA中I-O和NIO的区别？" class="headerlink" title="52：简述JAVA中I/O和NIO的区别？"></a>52：简述JAVA中I/O和NIO的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">NIO:是一种new IO，其目的是为了实现高速IO的代码，将IO操作并转换为操作系统，属于非阻塞型，java.nio.*，是以块（缓冲区）的形式就行数据的传输</span><br><span class="line">IO：是以流的方式就行数据的传输，属于阻塞型，影响程序的性能</span><br><span class="line"></span><br><span class="line">传统阻塞IO，如果你要read&#x2F;write( byte[10M])一个10M的文件，一旦调用了read&#x2F;write( byte[10M])这个方法，就得等10M全部read&#x2F;write，方法底层才会返回。</span><br><span class="line"></span><br><span class="line">非阻塞线程，调用read&#x2F;write( byte[10M])方法立即返回，当然这并不能代表10M已经read&#x2F;write完成，你需要检测这个byte[10M]的缓冲区</span><br><span class="line"></span><br><span class="line">java BIO：同步并阻塞，服务器实现模式为一个连接一个线程，即客户端有连接请求时服务器端就需要启动一个线程进行处理，如果这个连接不做任何事情会造成不必要的线程开销，当然可以通过线程池机制改善；</span><br><span class="line"></span><br><span class="line">java NIO：同步非阻塞，服务器实现模式为一个请求一个线程，NIO多线程对某资源进行IO操作时会先把资源先操作至内存缓冲区。然后询问是否IO操作就绪，是则进行IO操作，否则进行下一步操作，然后不断的轮询是否IO操作就绪，直到iIO操作就绪后进行相关操作</span><br><span class="line"></span><br><span class="line">java AIO：异步非阻塞，异步非阻塞，服务器实现模式为一个有效请求一个线程，客户端的I&#x2F;O请求都是由OS先完成了再通知服务器应用去启动线程进行处理。</span><br><span class="line"></span><br><span class="line">BIO和NIO的异同：</span><br><span class="line"></span><br><span class="line">    共同点：两者都是同步操作。即必须先进行IO操作后才能进行下一步操作。</span><br><span class="line">    不同点：BIO多线程对某资源进行IO操作时会出现阻塞，即一个线程进行IO操作完才会通知另外的IO操作线程，必须等待。</span><br></pre></td></tr></table></figure>
+
+<h2 id="53：JSP的内置对象及方法有哪些？"><a href="#53：JSP的内置对象及方法有哪些？" class="headerlink" title="53：JSP的内置对象及方法有哪些？"></a>53：JSP的内置对象及方法有哪些？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">request表示HttpServletRequest对象。它包含了有关浏览器请求的信息，并且提供了几个用于获取cookie, header, 和session数据的有用的方法。</span><br><span class="line"></span><br><span class="line">response表示HttpServletResponse对象，并提供了几个用于设置送回 浏览器的响应的方法（如cookies,头信息等）</span><br><span class="line"></span><br><span class="line">out对象是javax.jsp.JspWriter的一个实例，并提供了几个方法使你能用于向浏览器回送输出结果。</span><br><span class="line"></span><br><span class="line">pageContext表示一个javax.servlet.jsp.PageContext对象。它是用于方便存取各种范围的名字空间、servlet相关的对象的API，并且包装了通用的servlet相关功能的方法。 session表示一个请求的javax.servlet.http.HttpSession对象。</span><br><span class="line"></span><br><span class="line">Session可以存贮用户的状态信息 applicaton 表示一个javax.servlet.ServletContext对象。这有助于查找有关servlet引擎和servlet环境的信息 config表示一个javax.servlet.ServletConfig对象。该对象用于存取servlet实例的初始化参数。</span><br><span class="line"></span><br><span class="line">page表示从该页面产生的一个servlet实例</span><br></pre></td></tr></table></figure>
+
+<h2 id="54：sleep-和-wait-有什么区别？"><a href="#54：sleep-和-wait-有什么区别？" class="headerlink" title="54：sleep 和 wait 有什么区别？"></a>54：sleep 和 wait 有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sleep：</span><br><span class="line">    1：属于Thread类，表示让一个线程进入睡眠状态，等待一定的时间之后，自动醒来进入到可运行状态，不会马上进入运行状态</span><br><span class="line">    2：sleep方法没有释放锁</span><br><span class="line">    3：sleep必须捕获异常</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wait：</span><br><span class="line">    1：属于Object，一旦一个对象调用了wait方法，必须要采用notify()和notifyAll()方法唤醒该进程</span><br><span class="line">    2：wait方法释放了锁</span><br><span class="line">    3：wait不需要捕获异常</span><br></pre></td></tr></table></figure>
+
+<h2 id="55：Java-中的final关键字有哪些用法？"><a href="#55：Java-中的final关键字有哪些用法？" class="headerlink" title="55：Java 中的final关键字有哪些用法？"></a>55：Java 中的final关键字有哪些用法？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1：修饰类：表示该类不能被继承</span><br><span class="line">2：修饰方法：表示方法不能被重写</span><br><span class="line">3：修饰变量：表示变量只能一次赋值以后值不能被修改（常量）</span><br></pre></td></tr></table></figure>
+
+<h2 id="56：Error和Exception有什么区别？什么时候需要捕获异常，什么时候需要抛出异常？"><a href="#56：Error和Exception有什么区别？什么时候需要捕获异常，什么时候需要抛出异常？" class="headerlink" title="56：Error和Exception有什么区别？什么时候需要捕获异常，什么时候需要抛出异常？"></a>56：Error和Exception有什么区别？什么时候需要捕获异常，什么时候需要抛出异常？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1:Error表示系统级的错误和程序不必处理的异常,有可能恢复，但是恢复比较困难的严重问题。</span><br><span class="line">2：Exception表示需要捕捉或者需要程序进行处理的异常，是一种设计或实现问题；也就是说，它表示如果程序运行正常，从不会发生的情况</span><br><span class="line"></span><br><span class="line">异常处理的原则：</span><br><span class="line">    1：System.out.println是高代价的。调用System.out.println会降低系统吞吐量</span><br><span class="line">    2：在生产环境中别用异常的printStackTrace()方法。</span><br><span class="line">    3：如果你不能处理异常，不要捕获该异常</span><br><span class="line">    4：如果要捕获，应在离异常源近的地方捕获它</span><br><span class="line">    5：捕获的异常一定要做处理</span><br><span class="line">    6：可以自定义异常</span><br><span class="line">    7：就近原则</span><br></pre></td></tr></table></figure>
+
+<h2 id="57：下面程序的运行结果是-？"><a href="#57：下面程序的运行结果是-？" class="headerlink" title="57：下面程序的运行结果是()？"></a>57：下面程序的运行结果是()？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1 &#x3D; &quot;hello&quot;;</span><br><span class="line">String str2 &#x3D; &quot;he&quot; + new String(&quot;llo&quot;);</span><br><span class="line">System.err.println(str1 &#x3D;&#x3D; str2);</span><br><span class="line"></span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+
+<h2 id="58：写出冒泡排序的程序代码？-要求高逼格的代码"><a href="#58：写出冒泡排序的程序代码？-要求高逼格的代码" class="headerlink" title="58：写出冒泡排序的程序代码？(要求高逼格的代码)"></a>58：写出冒泡排序的程序代码？(要求高逼格的代码)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">高逼格的代码：</span><br><span class="line"></span><br><span class="line">接口：</span><br><span class="line"></span><br><span class="line">import java.util.Comparator;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * 排序器接口(策略模式: 将算法封装到具有共同接口的独立的类中使得它们可以相互替换)</span><br><span class="line"> *&#x2F;</span><br><span class="line">public interface Sorter &#123;</span><br><span class="line"></span><br><span class="line">   &#x2F;**</span><br><span class="line">    * 排序</span><br><span class="line">    * @param list 待排序的数组</span><br><span class="line">    *&#x2F;</span><br><span class="line">   public &lt;T extends Comparable&lt;T&gt;&gt; void sort(T[] list);</span><br><span class="line"></span><br><span class="line">   &#x2F;**</span><br><span class="line">    * 排序</span><br><span class="line">    * @param list 待排序的数组</span><br><span class="line">    * @param comp 比较两个对象的比较器</span><br><span class="line">    *&#x2F;</span><br><span class="line">   public &lt;T&gt; void sort(T[] list, Comparator&lt;T&gt; comp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">实现类：</span><br><span class="line"></span><br><span class="line">import java.util.Comparator;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * 冒泡排序</span><br><span class="line"> *</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class BubbleSorter implements Sorter &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public &lt;T extends Comparable&lt;T&gt;&gt; void sort(T[] list) &#123;</span><br><span class="line">        boolean swapped &#x3D; true;</span><br><span class="line">        for (int i &#x3D; 1, len &#x3D; list.length; i &lt; len &amp;&amp; swapped; ++i) &#123;</span><br><span class="line">            swapped &#x3D; false;</span><br><span class="line">            for (int j &#x3D; 0; j &lt; len - i; ++j) &#123;</span><br><span class="line">                if (list[j].compareTo(list[j + 1]) &gt; 0) &#123;</span><br><span class="line">                    T temp &#x3D; list[j];</span><br><span class="line">                    list[j] &#x3D; list[j + 1];</span><br><span class="line">                    list[j + 1] &#x3D; temp;</span><br><span class="line">                    swapped &#x3D; true;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public &lt;T&gt; void sort(T[] list, Comparator&lt;T&gt; comp) &#123;</span><br><span class="line">        boolean swapped &#x3D; true;</span><br><span class="line">        for (int i &#x3D; 1, len &#x3D; list.length; i &lt; len &amp;&amp; swapped; ++i) &#123;</span><br><span class="line">            swapped &#x3D; false;</span><br><span class="line">            for (int j &#x3D; 0; j &lt; len - i; ++j) &#123;</span><br><span class="line">                if (comp.compare(list[j], list[j + 1]) &gt; 0) &#123;</span><br><span class="line">                    T temp &#x3D; list[j];</span><br><span class="line">                    list[j] &#x3D; list[j + 1];</span><br><span class="line">                    list[j + 1] &#x3D; temp;</span><br><span class="line">                    swapped &#x3D; true;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="59：Java支持的数据类型有哪些？什么是自动拆装箱？"><a href="#59：Java支持的数据类型有哪些？什么是自动拆装箱？" class="headerlink" title="59：Java支持的数据类型有哪些？什么是自动拆装箱？"></a>59：Java支持的数据类型有哪些？什么是自动拆装箱？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">8种基本数据类型：</span><br><span class="line"></span><br><span class="line">    byte      8位         取值范围  -2^7 ~ 2^7 -1</span><br><span class="line"></span><br><span class="line">    short     16位        取值范围  -2^15 ~ 2^15 - 1</span><br><span class="line"></span><br><span class="line">    char      16位        取值范围  0 ~ 2 ^16 - 1</span><br><span class="line"></span><br><span class="line">    boolean   位数不明确   取值范围  true false</span><br><span class="line"></span><br><span class="line">    int       32位        取值范围  -2^31 ~ 2^31 - 1</span><br><span class="line"></span><br><span class="line">    long      64位        取值范围  -2^63 ~ 2^ 63 - 1</span><br><span class="line"></span><br><span class="line">    float     32位        取值范围  1.4e-45 ~ 3.40e38</span><br><span class="line"></span><br><span class="line">    double    64位        取值范围  4.9e-324 ~ 1.79e308</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line"></span><br><span class="line">    需要注意的是，String不是基本数据类型，而是引用类型</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在jdk1.5中引入了自动拆装箱的新特性，自动拆装箱，是指基本数据类型和引用数据类型之间的自动转换</span><br><span class="line"></span><br><span class="line">    基本类型转换成包装类型，称为装箱  </span><br><span class="line"></span><br><span class="line">    Integer intObjct &#x3D; new Integer(2); &#x2F;&#x2F;装箱 </span><br><span class="line">    &#x2F;&#x2F;Integer intObjct &#x3D; 2 &#x2F;&#x2F;自动装箱  </span><br><span class="line">    &#x2F;&#x2F;自动装箱，如果一个基本类型值出现在需要对象的环境中，会自动装箱  </span><br><span class="line"></span><br><span class="line">    如Integer 和 int 可以自动转换； Float和float可以自动转换</span><br></pre></td></tr></table></figure>
+
+<h2 id="60：简述单例模式的特征和应用场景，单例模式示例代码？"><a href="#60：简述单例模式的特征和应用场景，单例模式示例代码？" class="headerlink" title="60：简述单例模式的特征和应用场景，单例模式示例代码？"></a>60：简述单例模式的特征和应用场景，单例模式示例代码？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">单例模式（Singleton），也叫单子模式，是一种常用的软件设计模式。在应用这个模式时，单例对象的类必须保证只有一个实例存在。</span><br><span class="line">单例模式只允许创建一个对象，因此节省内存，加快对象访问速度</span><br><span class="line"></span><br><span class="line">单例模式要素： </span><br><span class="line">    a.私有构造方法 </span><br><span class="line">    b.私有静态引用指向自己实例 </span><br><span class="line">    c.以自己实例为返回值的公有静态方法 </span><br><span class="line"></span><br><span class="line">饿汉式：单例实例在类装载时就构建，急切初始化。（预先加载法） </span><br><span class="line"></span><br><span class="line">    优点 </span><br><span class="line">        1.线程安全 </span><br><span class="line">        2.在类加载的同时已经创建好一个静态对象，调用时反应速度快 </span><br><span class="line">    缺点 </span><br><span class="line">         资源效率不高，可能getInstance()永远不会执行到，但执行该类的其他静态方法或者加载了该类（class.forName)，那么这个实例仍然初始化 </span><br><span class="line"></span><br><span class="line">懒汉式：单例实例在第一次被使用时构建，延迟初始化。 </span><br><span class="line"></span><br><span class="line">应用场景：</span><br><span class="line"></span><br><span class="line">    - 需要频繁实例化然后销毁的对象</span><br><span class="line">    - 创建对象时耗时过多或者耗资源过多，但又经常用到的对象</span><br><span class="line">    - 有状态的工具类对象</span><br><span class="line">    - 频繁访问数据库或文件的对象</span><br><span class="line">    - 网站计数器，一般是采用单例模式实现</span><br><span class="line">    - 由于配置文件一般都是共享资源，即web应用的配置对象的读取，一般采用单例模式来实现。如：spring的配置文件的读取等</span><br><span class="line">    - 多线程的线程池的设计一般也是采用单例模式</span><br><span class="line">    - 数据库连接池的设计</span><br><span class="line"></span><br><span class="line">饿汉式单例：</span><br><span class="line">    public class Singleton &#123;</span><br><span class="line">        private Singleton()&#123;&#125;</span><br><span class="line">        private static Singleton instance &#x3D; new Singleton();</span><br><span class="line">        public static Singleton getInstance()&#123;</span><br><span class="line">            return instance;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">懒汉式单例：</span><br><span class="line">    public class Singleton &#123;</span><br><span class="line">        private static Singleton instance &#x3D; null;</span><br><span class="line">        private Singleton() &#123;&#125;</span><br><span class="line">        public static synchronized Singleton getInstance()&#123;</span><br><span class="line">            if (instance &#x3D;&#x3D; null) </span><br><span class="line">                instance ＝ new Singleton();</span><br><span class="line">            return instance;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">实现一个单例有两点注意事项：</span><br><span class="line">    - 将构造器私有，不允许外界通过构造器创建对象</span><br><span class="line">    - 通过公开的静态方法向外界返回类的唯一实例</span><br></pre></td></tr></table></figure>
+
+<h2 id="61：写出将10000个存在重复手机号的号码池去重的JAVA代码？-代码写的时候，手机号可以虚拟10个即可-不需要关联数据库，手机号数组用String-即可"><a href="#61：写出将10000个存在重复手机号的号码池去重的JAVA代码？-代码写的时候，手机号可以虚拟10个即可-不需要关联数据库，手机号数组用String-即可" class="headerlink" title="61：写出将10000个存在重复手机号的号码池去重的JAVA代码？(代码写的时候，手机号可以虚拟10个即可,不需要关联数据库，手机号数组用String[]即可)"></a>61：写出将10000个存在重复手机号的号码池去重的JAVA代码？(代码写的时候，手机号可以虚拟10个即可,不需要关联数据库，手机号数组用String[]即可)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">public class DemoPhone1 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        phoneDis();</span><br><span class="line">        phoneDis2();</span><br><span class="line">        phoneDis3();</span><br><span class="line">        phoneDis4();</span><br><span class="line">        phoneDis5();</span><br><span class="line">        phoneDis6();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void phoneDis()&#123;</span><br><span class="line">        String[] array &#x3D; &#123;&quot;18310141089&quot;,&quot;18310141089&quot;,&quot;18310141080&quot;,&quot;18310141083&quot;,&quot;18310141089&quot;,&quot;18310141489&quot;&#125;;  </span><br><span class="line">        List&lt;String&gt; result &#x3D; new ArrayList&lt;String&gt;();  </span><br><span class="line">        boolean flag;  </span><br><span class="line">        for(int i&#x3D;0;i&lt;array.length;i++)&#123;  </span><br><span class="line">            flag &#x3D; false;  </span><br><span class="line">            for(int j&#x3D;0;j&lt;result.size();j++)&#123;  </span><br><span class="line">                if(array[i].equals(result.get(j)))&#123;  </span><br><span class="line">                    flag &#x3D; true;  </span><br><span class="line">                    break;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">            if(!flag)&#123;  </span><br><span class="line">                result.add(array[i]);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        String[] arrayResult &#x3D; (String[]) result.toArray(new String[result.size()]);  </span><br><span class="line">        System.out.println(&quot;方法1：&quot; + Arrays.toString(arrayResult));  </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void phoneDis2()&#123;</span><br><span class="line">        String[] array &#x3D; &#123;&quot;18310141089&quot;,&quot;18310141089&quot;,&quot;18310141080&quot;,&quot;18310141083&quot;,&quot;18310141089&quot;,&quot;18310141489&quot;&#125;;  </span><br><span class="line">        List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();  </span><br><span class="line">        list.add(array[0]);  </span><br><span class="line">        for(int i&#x3D;1;i&lt;array.length;i++)&#123;  </span><br><span class="line">            if(list.toString().indexOf(array[i]) &#x3D;&#x3D; -1)&#123;  </span><br><span class="line">               list.add(array[i]);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        String[] arrayResult &#x3D; (String[]) list.toArray(new String[list.size()]);  </span><br><span class="line">        System.out.println(&quot;方法2：&quot; + Arrays.toString(arrayResult));  </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void phoneDis3()&#123;</span><br><span class="line">        String[] array &#x3D; &#123;&quot;18310141089&quot;,&quot;18310141089&quot;,&quot;18310141080&quot;,&quot;18310141083&quot;,&quot;18310141089&quot;,&quot;18310141489&quot;&#125;;  </span><br><span class="line">        List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();  </span><br><span class="line">        for(int i&#x3D;0;i&lt;array.length;i++)&#123;  </span><br><span class="line">            for(int j&#x3D;i+1;j&lt;array.length;j++)&#123;  </span><br><span class="line">                if(array[i] &#x3D;&#x3D; array[j])&#123;  </span><br><span class="line">                    j &#x3D; ++i;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">            list.add(array[i]);  </span><br><span class="line">        &#125;  </span><br><span class="line">        String[] arrayResult &#x3D; (String[]) list.toArray(new String[list.size()]);  </span><br><span class="line">        System.out.println(&quot;方法3：&quot; + Arrays.toString(arrayResult));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void phoneDis4()&#123;</span><br><span class="line">        String[] array &#x3D; &#123;&quot;18310141089&quot;,&quot;18310141089&quot;,&quot;18310141080&quot;,&quot;18310141083&quot;,&quot;18310141089&quot;,&quot;18310141489&quot;&#125;;  </span><br><span class="line">        Arrays.sort(array);  </span><br><span class="line">        List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();  </span><br><span class="line">        list.add(array[0]);  </span><br><span class="line">        for(int i&#x3D;1;i&lt;array.length;i++)&#123;  </span><br><span class="line">          if(!array[i].equals(list.get(list.size()-1)))&#123;  </span><br><span class="line">             list.add(array[i]);  </span><br><span class="line">          &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">       String[] arrayResult &#x3D; (String[]) list.toArray(new String[list.size()]);  </span><br><span class="line">       System.out.println(&quot;方法4：&quot; + Arrays.toString(arrayResult));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void phoneDis5()&#123;</span><br><span class="line">        String[] array &#x3D; &#123;&quot;18310141089&quot;,&quot;18310141089&quot;,&quot;18310141080&quot;,&quot;18310141083&quot;,&quot;18310141089&quot;,&quot;18310141489&quot;&#125;;  </span><br><span class="line">        Set&lt;String&gt; set &#x3D; new HashSet&lt;String&gt;();  </span><br><span class="line">        for(int i&#x3D;0;i&lt;array.length;i++)&#123;  </span><br><span class="line">            set.add(array[i]);  </span><br><span class="line">        &#125;  </span><br><span class="line">        String[] arrayResult &#x3D; (String[]) set.toArray(new String[set.size()]);  </span><br><span class="line">        System.out.println(&quot;方法5：&quot; + Arrays.toString(arrayResult)); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void phoneDis6() &#123;</span><br><span class="line">        String[] array &#x3D; &#123; &quot;18310141089&quot;, &quot;18310141089&quot;, &quot;18310141080&quot;,&quot;18310141083&quot;, &quot;18310141089&quot;, &quot;18310141489&quot; &#125;;</span><br><span class="line">        SortedSet&lt;String&gt; sset &#x3D; new TreeSet&lt;String&gt;();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; array.length; i++) &#123;</span><br><span class="line">            sset.add(array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        String[] arrayResult2 &#x3D; (String[]) sset.toArray(new String[sset.size()]);</span><br><span class="line">        System.out.println(&quot;方法6：&quot; + Arrays.toString(arrayResult2));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="62：构造器（constructor）是否可被重写（override）-是否可被重载？是否可被继承？"><a href="#62：构造器（constructor）是否可被重写（override）-是否可被重载？是否可被继承？" class="headerlink" title="62：构造器（constructor）是否可被重写（override）?是否可被重载？是否可被继承？"></a>62：构造器（constructor）是否可被重写（override）?是否可被重载？是否可被继承？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">构造器不能被继承，因此不能重写Override，但可以被重载Overload。</span><br></pre></td></tr></table></figure>
+
+<h2 id="63：JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？"><a href="#63：JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？" class="headerlink" title="63：JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？"></a>63：JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- jsp本质就是servlet</span><br><span class="line">- jsp应用于页面显示，servlet应用于逻辑控制</span><br><span class="line">- setvlet中没有内置对象，jsp中的内置对象都是必须通过HttpServletRequest对象，HttpServletResponse对象及HttpServlet对象得到</span><br></pre></td></tr></table></figure>
+
+<h2 id="64：简述synchronized和java-util-concurrent-locks-Lock的异同-？"><a href="#64：简述synchronized和java-util-concurrent-locks-Lock的异同-？" class="headerlink" title="64：简述synchronized和java.util.concurrent.locks.Lock的异同 ？"></a>64：简述synchronized和java.util.concurrent.locks.Lock的异同 ？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- Lock能完成几乎所有synchronized的功能，并有一些后者不具备的功能，如锁投票、定时锁等候、可中断锁等候等</span><br><span class="line">- synchronized 是Java内置的关键字，Lock 则是JDK 5中出现的一个包</span><br><span class="line">- synchronized 同步的代码块可以由JVM自动释放；Lock 需要程序员在finally块中手工释放</span><br></pre></td></tr></table></figure>
+
+<h2 id="65：如何发布Spring-Boot项目，简述步骤？"><a href="#65：如何发布Spring-Boot项目，简述步骤？" class="headerlink" title="65：如何发布Spring Boot项目，简述步骤？"></a>65：如何发布Spring Boot项目，简述步骤？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 发布jar包形式，使用maven</span><br><span class="line">- 取消tomcat依赖，发布war包形式</span><br><span class="line">- 自动化容器</span><br></pre></td></tr></table></figure>
+
+<h2 id="66：什么是java序列化，如何实现java序列化？"><a href="#66：什么是java序列化，如何实现java序列化？" class="headerlink" title="66：什么是java序列化，如何实现java序列化？"></a>66：什么是java序列化，如何实现java序列化？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">概念：</span><br><span class="line">    序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流化（将对象转换成二进制）。可以对流化后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进行读写操作时所引发的问题</span><br><span class="line"></span><br><span class="line">序列化：把Java对象转换为字节序列的过程。</span><br><span class="line">反序列化：把字节序列恢复为Java对象的过程。</span><br><span class="line"></span><br><span class="line">实现：</span><br><span class="line"></span><br><span class="line">    将需要被序列化的类实现Serializable接口</span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line"></span><br><span class="line">    被关键字static、transient修饰的变量不能被序列化。在被序列化后，transient修饰的变量会被设为初始值。如int型的是0、对象型的是null.</span><br></pre></td></tr></table></figure>
+
+<h2 id="67：在JAVA中，如何跳出当前的多重嵌套循环？"><a href="#67：在JAVA中，如何跳出当前的多重嵌套循环？" class="headerlink" title="67：在JAVA中，如何跳出当前的多重嵌套循环？"></a>67：在JAVA中，如何跳出当前的多重嵌套循环？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用break; return 方法</span><br></pre></td></tr></table></figure>
+
+<h2 id="68：面向对象的特征有哪些方面？"><a href="#68：面向对象的特征有哪些方面？" class="headerlink" title="68：面向对象的特征有哪些方面？"></a>68：面向对象的特征有哪些方面？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- 抽象：</span><br><span class="line">    抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。抽象包括两个方面，一是过程抽象，二是数据抽象。</span><br><span class="line">- 继承：</span><br><span class="line">    继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。</span><br><span class="line">- 封装：</span><br><span class="line">    封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。</span><br><span class="line">- 多态性：</span><br><span class="line">    多态性是指允许不同类的对象对同一消息作出响应。多态性包括参数化多态性和包含多态性。多态性语言具有灵活、抽象、行为共享、代码共享的优势，很好的解决了应用程序函数同名问题。</span><br></pre></td></tr></table></figure>
+
+<h2 id="69：Collection-和-Collections的区别？"><a href="#69：Collection-和-Collections的区别？" class="headerlink" title="69：Collection 和 Collections的区别？"></a>69：Collection 和 Collections的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Collection是集合类的上级接口</span><br><span class="line">    继承与他的接口主要有Set 和List. </span><br><span class="line">Collections是针对集合类的一个帮助类</span><br><span class="line">    他提供一系列静态方法实现对各种集合的搜索、排序、线程安全化等操作。</span><br></pre></td></tr></table></figure>
+
+<h2 id="70：同步和异步有何异同，在什么情况下分别使用他们？举例说明。"><a href="#70：同步和异步有何异同，在什么情况下分别使用他们？举例说明。" class="headerlink" title="70：同步和异步有何异同，在什么情况下分别使用他们？举例说明。"></a>70：同步和异步有何异同，在什么情况下分别使用他们？举例说明。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果数据将在线程间共享。</span><br><span class="line">    例如正在写的数据以后可能被另一个线程读到，或者正在读的数据可能已经被另一个线程写过了，那么这些数据就是共享数据，必须进行同步存取。 </span><br><span class="line">当应用程序在对象上调用了一个需要花费很长时间来执行的方法，并且不希望让程序等待方法的返回时，就应该使用异步编程，在很多情况下采用异步途径往往更有效率。</span><br></pre></td></tr></table></figure>
+
+<h2 id="71：GC是什么-为什么要有GC"><a href="#71：GC是什么-为什么要有GC" class="headerlink" title="71：GC是什么? 为什么要有GC?"></a>71：GC是什么? 为什么要有GC?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GC是垃圾收集的意思（Gabage Collection）</span><br><span class="line">内存处理是编程人员容易出现问题的地方，忘记或者错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的，Java语言没有提供释放已分配内存的显示操作方法</span><br></pre></td></tr></table></figure>
+
+<h2 id="72：如何实现servlet的单线程模式？"><a href="#72：如何实现servlet的单线程模式？" class="headerlink" title="72：如何实现servlet的单线程模式？"></a>72：如何实现servlet的单线程模式？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page isThreadSafe&#x3D;&quot;false&quot;%&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="73：Request对象的主要方法？"><a href="#73：Request对象的主要方法？" class="headerlink" title="73：Request对象的主要方法？"></a>73：Request对象的主要方法？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">setAttribute(String name,Object)：设置名字为name的request的参数值</span><br><span class="line">getAttribute(String name)：返回由name指定的属性值</span><br><span class="line">getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例</span><br><span class="line">getCookies()：返回客户端的所有Cookie对象，结果是一个Cookie数组</span><br><span class="line">getCharacterEncoding()：返回请求中的字符编码方式</span><br><span class="line">getContentLength()：返回请求的Body的长度</span><br><span class="line">getHeader(String name)：获得HTTP协议定义的文件头信息</span><br><span class="line">getHeaders(String name)：返回指定名字的request Header的所有值，结果是一个枚举的实例</span><br><span class="line">getHeaderNames()：返回所以request Header的名字，结果是一个枚举的实例</span><br><span class="line">getInputStream()：返回请求的输入流，用于获得请求中的数据 getMethod()：获得客户端向服务器端传送数据的方法</span><br><span class="line">getParameter(String name)：获得客户端传送给服务器端的有name指定的参数值</span><br><span class="line">getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例</span><br><span class="line">getParameterValues(String name)：获得有name指定的参数的所有值</span><br><span class="line">getProtocol()：获取客户端向服务器端传送数据所依据的协议名称</span><br><span class="line">getQueryString()：获得查询字符串</span><br><span class="line">getRequestURI()：获取发出请求字符串的客户端地址</span><br><span class="line">getRemoteAddr()：获取客户端的IP地址</span><br><span class="line">getRemoteHost()：获取客户端的名字</span><br><span class="line">getSession([Boolean create])：返回和请求相关</span><br><span class="line">Session getServerName()：获取服务器的名字</span><br><span class="line">getServletPath()：获取客户端所请求的脚本文件的路径</span><br><span class="line">getServerPort()：获取服务器的端口号</span><br><span class="line">removeAttribute(String name)：删除请求中的一个属性</span><br></pre></td></tr></table></figure>
+
+<h2 id="74：数据库三范式是什么？"><a href="#74：数据库三范式是什么？" class="headerlink" title="74：数据库三范式是什么？"></a>74：数据库三范式是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 第一范式：列不可再分 </span><br><span class="line">- 第二范式：行可以唯一区分，主键约束 </span><br><span class="line">- 第三范式：表的非主属性不能依赖与其他表的非主属性外键约束，且三大范式是一级一级依赖的，第二范式建立在第一范式上，第三范式建立第一第二范式上</span><br></pre></td></tr></table></figure>
+
+<h2 id="75：从数据库中随机取50条数据，以mysql为例？"><a href="#75：从数据库中随机取50条数据，以mysql为例？" class="headerlink" title="75：从数据库中随机取50条数据，以mysql为例？"></a>75：从数据库中随机取50条数据，以mysql为例？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from hj_user order by rand() limit 50</span><br></pre></td></tr></table></figure>
+
+<h2 id="76：事务四大特性分别是什么？"><a href="#76：事务四大特性分别是什么？" class="headerlink" title="76：事务四大特性分别是什么？"></a>76：事务四大特性分别是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- ACID：</span><br><span class="line">    - 原子性：要么执行，要么不执行 </span><br><span class="line">    - 隔离性：所有操作全部执行完以前，其它会话不能看到过程 </span><br><span class="line">    - 一致性：事务前后，数据总额一致 </span><br><span class="line">    - 持久性：一旦事务提交，对数据的改变就是永久的</span><br></pre></td></tr></table></figure>
+
+<h2 id="77：truncate与-delete区别？"><a href="#77：truncate与-delete区别？" class="headerlink" title="77：truncate与 delete区别？"></a>77：truncate与 delete区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同：二者均删除表中的全部行。但 TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少。 </span><br><span class="line">- DELETE 语句每次删除一行，并在事务日志中为所删除的每行记录一项。</span><br><span class="line">- TRUNCATE TABLE 通过释放存储表数据所用的数据页来删除数据，并且只在事务日志中记录页的释放。 </span><br><span class="line">    - TRUNCATE、DELETE、DROP 比较：</span><br><span class="line">        - TRUNCATE TABLE ：删除内容、释放空间但不删除定义。</span><br><span class="line">        - DELETE TABLE: 删除内容不删除定义，不释放空间。</span><br><span class="line">        - DROP TABLE ：删除内容和定义，释放空间。</span><br></pre></td></tr></table></figure>
+
+<h2 id="78：varchar2、varchar、char有什么区别？"><a href="#78：varchar2、varchar、char有什么区别？" class="headerlink" title="78：varchar2、varchar、char有什么区别？"></a>78：varchar2、varchar、char有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- Char的长度是固定的，而varchar2的长度是可以变化的</span><br><span class="line">    比如，存储字符串“abc”对于char(20)，表示你存储的字符将占20个字节，包含17个空，而同样的varchar2（20）只占了3个字节，20只是最大值，当你存储的字符小于20时，按实际长度存储。 </span><br><span class="line">- char的效率要被varchar2的效率高。 </span><br><span class="line">- 目前varchar是varchar2的同义词</span><br><span class="line">    工业标准的varchar类型可以存储空字符串，但是oracle不能这样做，尽管它保留以后这样做的权利。</span><br><span class="line">    Oracle自己开发了一个数据类型varchar2,这个类型不是一个标准的varchar，他将在数据库中varchar列可以存储空字符串的特性改为存储null值，如果你想有向后兼容的能力，oracle建议使用varchar2而不是varchar</span><br></pre></td></tr></table></figure>
+
+<h2 id="79：数据库的数据结果如何去重？"><a href="#79：数据库的数据结果如何去重？" class="headerlink" title="79：数据库的数据结果如何去重？"></a>79：数据库的数据结果如何去重？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用distinct关键字</span><br></pre></td></tr></table></figure>
+
+<h2 id="80：mysql如何获取当前系统的时间？"><a href="#80：mysql如何获取当前系统的时间？" class="headerlink" title="80：mysql如何获取当前系统的时间？"></a>80：mysql如何获取当前系统的时间？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql: select now();</span><br><span class="line">    oracle: select to_char(sysdate, &#39;yyyy-MM-dd HH24:mi:ss&#39;) from dual;</span><br></pre></td></tr></table></figure>
+
+<h2 id="81：union和union-all有什么不同"><a href="#81：union和union-all有什么不同" class="headerlink" title="81：union和union all有什么不同?"></a>81：union和union all有什么不同?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">· UNION在进行表链接后会筛选掉重复的记录，所以在表链接后会对所产生的结果集进行排序运算，删除重复的记录再返回结果。</span><br><span class="line">  实际大部分应用中是不会产生重复的记录，最常见的是过程表与历史表UNION。 </span><br><span class="line"></span><br><span class="line">· UNION ALL只是简单的将两个结果合并后就返回。这样，如果返回的两个结果集中有重复的数据，那么返回的结果集就会包含重复的数据了。</span><br><span class="line"></span><br><span class="line">· 从效率上说，UNION ALL 要比UNION快很多，所以，如果可以确认合并的两个结果集中不包含重复的数据的话，那么就使用UNION ALL。</span><br></pre></td></tr></table></figure>
+
+<h2 id="82：触发器的作用是什么？"><a href="#82：触发器的作用是什么？" class="headerlink" title="82：触发器的作用是什么？"></a>82：触发器的作用是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">· 触发器是一种特殊的存储过程，主要是通过事件来触发而被执行的。</span><br><span class="line">· 它可以强化约束，来维护数据的完整性和一致性。</span><br><span class="line">· 可在写入数据表前，强制检验或转换数据。</span><br><span class="line">· 触发器发生错误时，异动的结果会被撤销。</span><br><span class="line">· 部分数据库管理系统可以针对数据定义语言（DDL）使用触发器，称为DDL触发器。</span><br><span class="line">· 可依照特定的情况，替换异动的指令 (INSTEAD OF)。</span><br></pre></td></tr></table></figure>
+
+<h2 id="83：触发器的限制有哪些？"><a href="#83：触发器的限制有哪些？" class="headerlink" title="83：触发器的限制有哪些？"></a>83：触发器的限制有哪些？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">· 一个表最多只能有三个触发器，insert、update、delete</span><br><span class="line">· 每个触发器只能用于一个表</span><br><span class="line">· 不能对视图、临时表创建触发器</span><br><span class="line">· Truncate table能删除表，但不能触发触发器</span><br></pre></td></tr></table></figure>
+
+<h2 id="84：索引的作用？它的优缺点是什么？"><a href="#84：索引的作用？它的优缺点是什么？" class="headerlink" title="84：索引的作用？它的优缺点是什么？"></a>84：索引的作用？它的优缺点是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">· 索引就一种特殊的查询表，数据库的搜索可以利用它加速对数据的检索。</span><br><span class="line">· 它很类似与现实生活中书的目录，不需要查询整本书内容就可以找到想要的数据。</span><br><span class="line">· 索引可以是唯一的，创建索引允许指定单个列或者是多个列。</span><br><span class="line">· 缺点是它减慢了数据录入的速度，同时也增加了数据库的尺寸大小。</span><br></pre></td></tr></table></figure>
+
+<h2 id="85：什么样的字段适合建索引？"><a href="#85：什么样的字段适合建索引？" class="headerlink" title="85：什么样的字段适合建索引？"></a>85：什么样的字段适合建索引？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">· 唯一</span><br><span class="line">· 主、外键</span><br><span class="line">· 不为空</span><br><span class="line">· 表之间的关联字段</span><br><span class="line">· 查询比较频繁的字段</span><br></pre></td></tr></table></figure>
+
+<h2 id="86：列举几种表连接方式-有什么区别？"><a href="#86：列举几种表连接方式-有什么区别？" class="headerlink" title="86：列举几种表连接方式,有什么区别？"></a>86：列举几种表连接方式,有什么区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 内连接、自连接、外连接（左、右、全）、交叉连接 </span><br><span class="line">    - 内连接：只有两个元素表相匹配的才能在结果集中显示。 </span><br><span class="line">    - 外连接： </span><br><span class="line">        - 左外连接:左边为驱动表，驱动表的数据全部显示，匹配表的不匹配的不会显示。 </span><br><span class="line">        - 右外连接:右边为驱动表，驱动表的数据全部显示，匹配表的不匹配的不会显示。 </span><br><span class="line">        - 全外连接：连接的表中不匹配的数据全部会显示出来。 </span><br><span class="line">    - 交叉连接： 笛卡尔效应，显示的结果是链接表数的乘积。</span><br></pre></td></tr></table></figure>
+
+<h2 id="87：什么是存储过程？Java调用存储过程？"><a href="#87：什么是存储过程？Java调用存储过程？" class="headerlink" title="87：什么是存储过程？Java调用存储过程？"></a>87：什么是存储过程？Java调用存储过程？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">· 存储过程存在于大型数据库系统中，是一个预编译的SQL语句（为了完成特定功能的SQL 语句集），经过第一次编译后再次调用不需要再次编译。</span><br><span class="line">- 优点是：</span><br><span class="line">    - 允许模块化的设计，就是说只需创建一次，以后在该程序中就可以调用多次。</span><br><span class="line">    - 如果某次操作需要执行多次SQL，使用存储过程比单纯SQL语句执行要快。</span><br><span class="line">    - 减少网络流量。存储过程位于服务器上，调用的时候只需要传递存储过程的名称以及参数就可以了，因此降低了网络传输的数据量。</span><br><span class="line">    - 安全性。参数化的存储过程可以防止SQL注入式攻击，而且可以将Grant、Deny以及Revoke权限应用于存储过程。</span><br><span class="line">- 调用： </span><br><span class="line">    - 1）可以用一个命令对象来调用存储过程。 </span><br><span class="line">    - 2）可以供外部程序调用，比如：java程序。</span><br></pre></td></tr></table></figure>
+
+<h2 id="88：索引类型有哪些？"><a href="#88：索引类型有哪些？" class="headerlink" title="88：索引类型有哪些？"></a>88：索引类型有哪些？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Single column 单行索引</span><br><span class="line">Concatenated 多行索引</span><br><span class="line">Unique 唯一索引</span><br><span class="line">NonUnique 非唯一索引</span><br><span class="line">Function-based 函数索引</span><br><span class="line">Domain 域索引 物理上：</span><br><span class="line">Partitioned 分区索引</span><br><span class="line">NonPartitioned 非分区索引</span><br><span class="line">B-tree ：</span><br><span class="line">Normal 正常型B树</span><br><span class="line">Rever Key 反转型B树 </span><br><span class="line">Bitmap 位图索引</span><br></pre></td></tr></table></figure>
+
+<h2 id="89：什么是事务？什么是锁？"><a href="#89：什么是事务？什么是锁？" class="headerlink" title="89：什么是事务？什么是锁？"></a>89：什么是事务？什么是锁？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- 事务就是被绑定在一起作为一个逻辑工作单元的SQL语句分组</span><br><span class="line">  如果任何一个语句操作失败那么整个操作就被失败，以后操作就会回滚到操作前状态，或者是上有个节点。</span><br><span class="line">  为了确保要么执行，要么不执行，就可以使用事务。</span><br><span class="line">  要将有组语句作为事务考虑，就需要通过ACID测试：</span><br><span class="line">  即原子性，一致性，隔离性和持久性。 </span><br><span class="line">- 锁：锁是实现事务的关键，锁可以保证事务的完整性和并发性。</span><br><span class="line">     与现实生活中锁一样，它可以使某些数据的拥有者，在某段时间内不能使用某些数据或数据结构。</span><br><span class="line">     当然锁还分级别的，比如页级锁、行级锁等。</span><br></pre></td></tr></table></figure>
+
+<h2 id="90：什么叫视图？游标是什么？"><a href="#90：什么叫视图？游标是什么？" class="headerlink" title="90：什么叫视图？游标是什么？"></a>90：什么叫视图？游标是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 视图：是一种虚拟的表，具有和物理表相同的功能。</span><br><span class="line">       可以对视图进行增，改，查，操作，试图通常是有一个表或者多个表的行或列的子集。</span><br><span class="line">       对视图的修改会影响基本表。它使得我们获取数据更容易，相比多表查询。 </span><br><span class="line">- 游标：是对查询出来的结果集作为一个单元来有效的处理。</span><br><span class="line">       游标可以定在该单元中的特定行，从结果集的当前行检索一行或多行。</span><br><span class="line">       可以对结果集当前行做修改。</span><br><span class="line">       一般不使用游标，但是需要逐条处理数据的时候，游标显得十分重要。</span><br></pre></td></tr></table></figure>
+
+<h2 id="91：视图的优缺点？"><a href="#91：视图的优缺点？" class="headerlink" title="91：视图的优缺点？"></a>91：视图的优缺点？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 优点： </span><br><span class="line">    - 对数据库的访问，因为视图可以有选择性的选取数据库里的一部分。 </span><br><span class="line">    - 用户通过简单的查询可以从复杂查询中得到结果。 </span><br><span class="line">    - 维护数据的独立性，试图可从多个表检索数据。 </span><br><span class="line">    - 对于相同的数据可产生不同的视图。 </span><br><span class="line">- 缺点： </span><br><span class="line">    - 性能：查询视图时，必须把视图的查询转化成对基本表的查询，如果这个视图是由一个复杂的多表查询所定义，那么，那么就无法更改数据</span><br></pre></td></tr></table></figure>
+
+<h2 id="92：主键和外键的区别？"><a href="#92：主键和外键的区别？" class="headerlink" title="92：主键和外键的区别？"></a>92：主键和外键的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">· 主键在本表中是唯一的、不可唯空的，外键可以重复可以唯空；</span><br><span class="line">· 外键和另一张表的主键关联，不能创建对应表中不存在的外键。</span><br></pre></td></tr></table></figure>
+
+<h2 id="93：在数据库中查询语句速度很慢，如何优化？"><a href="#93：在数据库中查询语句速度很慢，如何优化？" class="headerlink" title="93：在数据库中查询语句速度很慢，如何优化？"></a>93：在数据库中查询语句速度很慢，如何优化？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">· 建索引 </span><br><span class="line">· 减少表之间的关联 </span><br><span class="line">· 优化sql，不要让sql做全表查询</span><br><span class="line">· 简化查询字段，没用的字段不要，已经对返回结果的控制，尽量返回少量数据 </span><br><span class="line">· 尽量用PreparedStatement来查询，不要用Statement</span><br></pre></td></tr></table></figure>
+
+<h2 id="94：order-by与group-by的区别？"><a href="#94：order-by与group-by的区别？" class="headerlink" title="94：order by与group by的区别？"></a>94：order by与group by的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- order by 排序查询、asc升序、desc降序 </span><br><span class="line">- group by 分组查询、having 只能用于group by子句、作用于组内。</span><br><span class="line">    having条件子句可以直接跟函数表达式。</span><br><span class="line">    使用group by 子句的查询语句需要使用聚合函数。</span><br></pre></td></tr></table></figure>
+
+<h2 id="95：commit在哪里会运用？"><a href="#95：commit在哪里会运用？" class="headerlink" title="95：commit在哪里会运用？"></a>95：commit在哪里会运用？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- Oracle的commit就是DML语句提交数据（这里是释放锁不是锁表），在未提交前你前面的操作更新的都是内存，没有更新到物理文件中。 </span><br><span class="line">- 执行commit从用户角度讲就是更新到物理文件了，事实上commit时还没有写date file，而是记录了redo log file，要从内存写到data物理文件，需要触发检查点，由DBWR这个后台进程来写，这里内容有点多的，如果不深究的话你就理解成commit即为从内存更新到物理文件。</span><br><span class="line">- insert以后commit之前是锁表的状态，其他事务无法对该表进行操作</span><br><span class="line">- 如果不提交的话，那么这个表就被锁了</span><br></pre></td></tr></table></figure>
+
+<h2 id="96：InnoDB索引和MyISAM索引的区别？"><a href="#96：InnoDB索引和MyISAM索引的区别？" class="headerlink" title="96：InnoDB索引和MyISAM索引的区别？"></a>96：InnoDB索引和MyISAM索引的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">· 主索引的区别，InnoDB的数据文件本身就是索引文件。而MyISAM的索引和数据是分开的。 </span><br><span class="line">· 辅助索引的区别：InnoDB的辅助索引data域存储相应记录主键的值而不是地址。而MyISAM的辅助索引和主索引没有多大区别。</span><br><span class="line">· MyISAM表锁，不支持事务，表损坏率较高</span><br><span class="line">· InnoDB行锁，支持事务</span><br></pre></td></tr></table></figure>
+
+<h2 id="97：谈一谈数据库优化方面的经验？"><a href="#97：谈一谈数据库优化方面的经验？" class="headerlink" title="97：谈一谈数据库优化方面的经验？"></a>97：谈一谈数据库优化方面的经验？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">从三方面去回答：</span><br><span class="line">- 1：数据库设计</span><br><span class="line">    - 数据库表：字段类型、字段长度、注释、字段命名规范</span><br><span class="line">    - 数据库索引：外键、关联字段、查询频率比较高的字段、</span><br><span class="line">            如果数据表字段&gt;20，则最多支持16个索引</span><br><span class="line">            如果数据表字段&lt;20，则根据查询频率字段来定</span><br><span class="line">    - 数据库视图：相当于一张临时表，业务中，尽量少使用</span><br><span class="line">    - 数据库引擎：根据业务，选择对应的表引擎技术</span><br><span class="line">    - 数据库存储过程：尽量少用</span><br><span class="line">    - 数据库字符：UTF-8、或者和页面字符保持一致</span><br><span class="line">    - 数据库监听器&#x2F;触发器：一般用于调度任务或者备份还原</span><br><span class="line">- 2：业务调用的sql语句优化</span><br><span class="line">    - 尽量少关联表，效率最高关联4张表，如果多于4张表，则需要开启两个链接事务，但是这两个事务，必须在一个service当中。</span><br><span class="line">    - 如果是查询语句，则不建议使用*</span><br><span class="line">    - 如果是查询语句，where条件后面，最好使用索引字段进行关联</span><br><span class="line">- 3：数据库服务器的搭建（集群）</span><br><span class="line">    - 主从配置：</span><br><span class="line">    - 读写分离：</span><br><span class="line">    - 自动化（容器）：</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Handy Jiang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/19/Sportmeeting-Management-System/" rel="next" title="Sportmeeting_Management_System">
+                <i class="fa fa-chevron-left"></i> Sportmeeting_Management_System
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Handy Jiang" />
+            
+              <p class="site-author-name" itemprop="name">Handy Jiang</p>
+              <p class="site-description motion-element" itemprop="description">Everything from life</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ihandyyy" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:yourname?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题汇总"><span class="nav-number">1.</span> <span class="nav-text">面试题汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1：重载与重写有什么区别？"><span class="nav-number">1.1.</span> <span class="nav-text">1：重载与重写有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2：-amp-和-amp-amp-有什么区别？"><span class="nav-number">1.2.</span> <span class="nav-text">2：&amp;和&amp;&amp;有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3：HashTable和HashMap有什么区别？"><span class="nav-number">1.3.</span> <span class="nav-text">3：HashTable和HashMap有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4：用最有效率的方法算出2乘以8等于多少？"><span class="nav-number">1.4.</span> <span class="nav-text">4：用最有效率的方法算出2乘以8等于多少？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5：final-finally-finalize的区别？"><span class="nav-number">1.5.</span> <span class="nav-text">5：final, finally, finalize的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6：字节流和字符流有什么区别？"><span class="nav-number">1.6.</span> <span class="nav-text">6：字节流和字符流有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7：Arraylist和Linkedlist的区别"><span class="nav-number">1.7.</span> <span class="nav-text">7：Arraylist和Linkedlist的区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8：接口和抽象类有什么区别？"><span class="nav-number">1.8.</span> <span class="nav-text">8：接口和抽象类有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9：String，-StringBuffer，-StringBuilder-的区别？"><span class="nav-number">1.9.</span> <span class="nav-text">9：String， StringBuffer， StringBuilder 的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10：转发（forward）和重定向（redirect）的区别？"><span class="nav-number">1.10.</span> <span class="nav-text">10：转发（forward）和重定向（redirect）的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11：写出JDBC操作数据库的步骤？"><span class="nav-number">1.11.</span> <span class="nav-text">11：写出JDBC操作数据库的步骤？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12：TCP和UDP的区别？哪个是三次握手协议？"><span class="nav-number">1.12.</span> <span class="nav-text">12：TCP和UDP的区别？哪个是三次握手协议？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13：创建多线程的方式有几种？分别是什么？线程死锁是如何产生的？如何防止线程死锁现象？"><span class="nav-number">1.13.</span> <span class="nav-text">13：创建多线程的方式有几种？分别是什么？线程死锁是如何产生的？如何防止线程死锁现象？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14：Session和Cookie有什么区别？"><span class="nav-number">1.14.</span> <span class="nav-text">14：Session和Cookie有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15：GET和POST请求的区别？"><span class="nav-number">1.15.</span> <span class="nav-text">15：GET和POST请求的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16：JSP的常用指令有哪些？"><span class="nav-number">1.16.</span> <span class="nav-text">16：JSP的常用指令有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17：DI有几种方式、分别是什么，你常用的是哪种方式？"><span class="nav-number">1.17.</span> <span class="nav-text">17：DI有几种方式、分别是什么，你常用的是哪种方式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18：Mybatis中-和-在xml中取值有什么不同？"><span class="nav-number">1.18.</span> <span class="nav-text">18：Mybatis中$和#在xml中取值有什么不同？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19：列举Struts2常见的组件有哪些？常见的配置标签有哪些？返回值类型有哪些？"><span class="nav-number">1.19.</span> <span class="nav-text">19：列举Struts2常见的组件有哪些？常见的配置标签有哪些？返回值类型有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20：Spring常见的注解有哪些？"><span class="nav-number">1.20.</span> <span class="nav-text">20：Spring常见的注解有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21：一个汉字几个字节，一个char类型的变量，可以储存一个汉字吗，为什么？"><span class="nav-number">1.21.</span> <span class="nav-text">21：一个汉字几个字节，一个char类型的变量，可以储存一个汉字吗，为什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22：多线程中run和start方法有什么区别？"><span class="nav-number">1.22.</span> <span class="nav-text">22：多线程中run和start方法有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23：静态变量和实例变量有什么区别？"><span class="nav-number">1.23.</span> <span class="nav-text">23：静态变量和实例变量有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24：List和Map有什么区别？"><span class="nav-number">1.24.</span> <span class="nav-text">24：List和Map有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25：-与equals有什么区别？"><span class="nav-number">1.25.</span> <span class="nav-text">25：&#x3D;&#x3D;与equals有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26：如何给一张表增加一个字段，写出sql语句？"><span class="nav-number">1.26.</span> <span class="nav-text">26：如何给一张表增加一个字段，写出sql语句？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27：-i与i-的区别？"><span class="nav-number">1.27.</span> <span class="nav-text">27：++i与i++的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#28：谈谈Spring-AOP的原理？"><span class="nav-number">1.28.</span> <span class="nav-text">28：谈谈Spring AOP的原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#29：什么是IOC？"><span class="nav-number">1.29.</span> <span class="nav-text">29：什么是IOC？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30：什么是ORM？"><span class="nav-number">1.30.</span> <span class="nav-text">30：什么是ORM？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31：Integer与int的区别？"><span class="nav-number">1.31.</span> <span class="nav-text">31：Integer与int的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#32：Hibernate与Mybatis区别？"><span class="nav-number">1.32.</span> <span class="nav-text">32：Hibernate与Mybatis区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#33：简要说明SSH框架搭建步骤？"><span class="nav-number">1.33.</span> <span class="nav-text">33：简要说明SSH框架搭建步骤？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#34：简要说明SSM框架搭建步骤？"><span class="nav-number">1.34.</span> <span class="nav-text">34：简要说明SSM框架搭建步骤？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35：谈谈你对MVC的理解？"><span class="nav-number">1.35.</span> <span class="nav-text">35：谈谈你对MVC的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#36：Redis支持哪些数据类型的存储？"><span class="nav-number">1.36.</span> <span class="nav-text">36：Redis支持哪些数据类型的存储？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#37：Java如何调用Redis进行数据操作，并列举增删改查操作？"><span class="nav-number">1.37.</span> <span class="nav-text">37：Java如何调用Redis进行数据操作，并列举增删改查操作？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38：Java如何链接MongoDB，写出逻辑代码？"><span class="nav-number">1.38.</span> <span class="nav-text">38：Java如何链接MongoDB，写出逻辑代码？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#39：MongoDB的体系逻辑结构，主要有什么组成？"><span class="nav-number">1.39.</span> <span class="nav-text">39：MongoDB的体系逻辑结构，主要有什么组成？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#40：Redis和MongoDB分别应用于哪些应用场景？"><span class="nav-number">1.40.</span> <span class="nav-text">40：Redis和MongoDB分别应用于哪些应用场景？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#41：列举至少10个linux系统操作命令，并给出汉字解释？"><span class="nav-number">1.41.</span> <span class="nav-text">41：列举至少10个linux系统操作命令，并给出汉字解释？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42：分别写出oracle、mysql的分页关键词？"><span class="nav-number">1.42.</span> <span class="nav-text">42：分别写出oracle、mysql的分页关键词？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#43：如果equals方法比较为true，那么它们的Hashcode值一定相同吗？-如果hashcode相同，那么equals方法比较一定为true吗？"><span class="nav-number">1.43.</span> <span class="nav-text">43：如果equals方法比较为true，那么它们的Hashcode值一定相同吗？ 如果hashcode相同，那么equals方法比较一定为true吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#44：简述servlet-生命周期？"><span class="nav-number">1.44.</span> <span class="nav-text">44：简述servlet 生命周期？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#45：JDK和JRE的关系区别是什么？"><span class="nav-number">1.45.</span> <span class="nav-text">45：JDK和JRE的关系区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#46：SpringMVC运行原理是什么？"><span class="nav-number">1.46.</span> <span class="nav-text">46：SpringMVC运行原理是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#47：进程和线程的区别是什么？"><span class="nav-number">1.47.</span> <span class="nav-text">47：进程和线程的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#48：进程的几种状态分别是什么？"><span class="nav-number">1.48.</span> <span class="nav-text">48：进程的几种状态分别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#49：请说出你所知道的线程同步的方法？"><span class="nav-number">1.49.</span> <span class="nav-text">49：请说出你所知道的线程同步的方法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#50：用户在浏览器中输入URL之后，发生了什么？写出请求和响应的流程"><span class="nav-number">1.50.</span> <span class="nav-text">50：用户在浏览器中输入URL之后，发生了什么？写出请求和响应的流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#51：响应结果状态码有哪些，并给出中文含义？"><span class="nav-number">1.51.</span> <span class="nav-text">51：响应结果状态码有哪些，并给出中文含义？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#52：简述JAVA中I-O和NIO的区别？"><span class="nav-number">1.52.</span> <span class="nav-text">52：简述JAVA中I&#x2F;O和NIO的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#53：JSP的内置对象及方法有哪些？"><span class="nav-number">1.53.</span> <span class="nav-text">53：JSP的内置对象及方法有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#54：sleep-和-wait-有什么区别？"><span class="nav-number">1.54.</span> <span class="nav-text">54：sleep 和 wait 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#55：Java-中的final关键字有哪些用法？"><span class="nav-number">1.55.</span> <span class="nav-text">55：Java 中的final关键字有哪些用法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#56：Error和Exception有什么区别？什么时候需要捕获异常，什么时候需要抛出异常？"><span class="nav-number">1.56.</span> <span class="nav-text">56：Error和Exception有什么区别？什么时候需要捕获异常，什么时候需要抛出异常？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#57：下面程序的运行结果是-？"><span class="nav-number">1.57.</span> <span class="nav-text">57：下面程序的运行结果是()？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#58：写出冒泡排序的程序代码？-要求高逼格的代码"><span class="nav-number">1.58.</span> <span class="nav-text">58：写出冒泡排序的程序代码？(要求高逼格的代码)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#59：Java支持的数据类型有哪些？什么是自动拆装箱？"><span class="nav-number">1.59.</span> <span class="nav-text">59：Java支持的数据类型有哪些？什么是自动拆装箱？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#60：简述单例模式的特征和应用场景，单例模式示例代码？"><span class="nav-number">1.60.</span> <span class="nav-text">60：简述单例模式的特征和应用场景，单例模式示例代码？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#61：写出将10000个存在重复手机号的号码池去重的JAVA代码？-代码写的时候，手机号可以虚拟10个即可-不需要关联数据库，手机号数组用String-即可"><span class="nav-number">1.61.</span> <span class="nav-text">61：写出将10000个存在重复手机号的号码池去重的JAVA代码？(代码写的时候，手机号可以虚拟10个即可,不需要关联数据库，手机号数组用String[]即可)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#62：构造器（constructor）是否可被重写（override）-是否可被重载？是否可被继承？"><span class="nav-number">1.62.</span> <span class="nav-text">62：构造器（constructor）是否可被重写（override）?是否可被重载？是否可被继承？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#63：JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？"><span class="nav-number">1.63.</span> <span class="nav-text">63：JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#64：简述synchronized和java-util-concurrent-locks-Lock的异同-？"><span class="nav-number">1.64.</span> <span class="nav-text">64：简述synchronized和java.util.concurrent.locks.Lock的异同 ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#65：如何发布Spring-Boot项目，简述步骤？"><span class="nav-number">1.65.</span> <span class="nav-text">65：如何发布Spring Boot项目，简述步骤？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#66：什么是java序列化，如何实现java序列化？"><span class="nav-number">1.66.</span> <span class="nav-text">66：什么是java序列化，如何实现java序列化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#67：在JAVA中，如何跳出当前的多重嵌套循环？"><span class="nav-number">1.67.</span> <span class="nav-text">67：在JAVA中，如何跳出当前的多重嵌套循环？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#68：面向对象的特征有哪些方面？"><span class="nav-number">1.68.</span> <span class="nav-text">68：面向对象的特征有哪些方面？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#69：Collection-和-Collections的区别？"><span class="nav-number">1.69.</span> <span class="nav-text">69：Collection 和 Collections的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#70：同步和异步有何异同，在什么情况下分别使用他们？举例说明。"><span class="nav-number">1.70.</span> <span class="nav-text">70：同步和异步有何异同，在什么情况下分别使用他们？举例说明。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#71：GC是什么-为什么要有GC"><span class="nav-number">1.71.</span> <span class="nav-text">71：GC是什么? 为什么要有GC?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#72：如何实现servlet的单线程模式？"><span class="nav-number">1.72.</span> <span class="nav-text">72：如何实现servlet的单线程模式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#73：Request对象的主要方法？"><span class="nav-number">1.73.</span> <span class="nav-text">73：Request对象的主要方法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#74：数据库三范式是什么？"><span class="nav-number">1.74.</span> <span class="nav-text">74：数据库三范式是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#75：从数据库中随机取50条数据，以mysql为例？"><span class="nav-number">1.75.</span> <span class="nav-text">75：从数据库中随机取50条数据，以mysql为例？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#76：事务四大特性分别是什么？"><span class="nav-number">1.76.</span> <span class="nav-text">76：事务四大特性分别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#77：truncate与-delete区别？"><span class="nav-number">1.77.</span> <span class="nav-text">77：truncate与 delete区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#78：varchar2、varchar、char有什么区别？"><span class="nav-number">1.78.</span> <span class="nav-text">78：varchar2、varchar、char有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#79：数据库的数据结果如何去重？"><span class="nav-number">1.79.</span> <span class="nav-text">79：数据库的数据结果如何去重？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#80：mysql如何获取当前系统的时间？"><span class="nav-number">1.80.</span> <span class="nav-text">80：mysql如何获取当前系统的时间？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#81：union和union-all有什么不同"><span class="nav-number">1.81.</span> <span class="nav-text">81：union和union all有什么不同?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#82：触发器的作用是什么？"><span class="nav-number">1.82.</span> <span class="nav-text">82：触发器的作用是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#83：触发器的限制有哪些？"><span class="nav-number">1.83.</span> <span class="nav-text">83：触发器的限制有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#84：索引的作用？它的优缺点是什么？"><span class="nav-number">1.84.</span> <span class="nav-text">84：索引的作用？它的优缺点是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#85：什么样的字段适合建索引？"><span class="nav-number">1.85.</span> <span class="nav-text">85：什么样的字段适合建索引？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#86：列举几种表连接方式-有什么区别？"><span class="nav-number">1.86.</span> <span class="nav-text">86：列举几种表连接方式,有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#87：什么是存储过程？Java调用存储过程？"><span class="nav-number">1.87.</span> <span class="nav-text">87：什么是存储过程？Java调用存储过程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#88：索引类型有哪些？"><span class="nav-number">1.88.</span> <span class="nav-text">88：索引类型有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#89：什么是事务？什么是锁？"><span class="nav-number">1.89.</span> <span class="nav-text">89：什么是事务？什么是锁？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#90：什么叫视图？游标是什么？"><span class="nav-number">1.90.</span> <span class="nav-text">90：什么叫视图？游标是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#91：视图的优缺点？"><span class="nav-number">1.91.</span> <span class="nav-text">91：视图的优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#92：主键和外键的区别？"><span class="nav-number">1.92.</span> <span class="nav-text">92：主键和外键的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#93：在数据库中查询语句速度很慢，如何优化？"><span class="nav-number">1.93.</span> <span class="nav-text">93：在数据库中查询语句速度很慢，如何优化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#94：order-by与group-by的区别？"><span class="nav-number">1.94.</span> <span class="nav-text">94：order by与group by的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#95：commit在哪里会运用？"><span class="nav-number">1.95.</span> <span class="nav-text">95：commit在哪里会运用？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#96：InnoDB索引和MyISAM索引的区别？"><span class="nav-number">1.96.</span> <span class="nav-text">96：InnoDB索引和MyISAM索引的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#97：谈一谈数据库优化方面的经验？"><span class="nav-number">1.97.</span> <span class="nav-text">97：谈一谈数据库优化方面的经验？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Handy Jiang</span>
+
+  
+      <span class="post-meta-divider">|</span>
+</span>
+<a href="http://www.beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">粤ICP备20015576号</a>
+
+</div>
+
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
